@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { 
   Lock, 
   Unlock, 
@@ -21,9 +21,12 @@ import {
   Eye,
   EyeOff,
   Mail,
+  ImagePlus,
+  Loader2,
   Image as ImageIcon
 } from 'lucide-react';
 import { useCatalog } from '../../context/CatalogContext';
+import { uploadImageToImgbb } from '../../lib/imgbb';
 import { EquipmentItem } from '../../types';
 
 export const AdminCatalogModal: React.FC = () => {
@@ -64,6 +67,11 @@ export const AdminCatalogModal: React.FC = () => {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [passwordChangeMsg, setPasswordChangeMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  // Image upload state
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [uploadError, setUploadError] = useState('');
 
   // Product Editor Modal State
   const [editingItem, setEditingItem] = useState<EquipmentItem | null>(null);
@@ -290,6 +298,34 @@ export const AdminCatalogModal: React.FC = () => {
       }
     };
     reader.readAsText(file);
+  };
+
+  const handleImageFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    e.target.value = ''; // permite volver a elegir el mismo archivo después si hace falta
+
+    if (!file.type.startsWith('image/')) {
+      setUploadError('Selecciona un archivo de imagen (JPG, PNG, WEBP...).');
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setUploadError('La imagen pesa más de 5 MB. Usa una imagen más ligera.');
+      return;
+    }
+
+    setUploadError('');
+    setIsUploadingImage(true);
+    try {
+      const url = await uploadImageToImgbb(file);
+      setFormData((prev) => ({ ...prev, imageUrl: url }));
+    } catch (err) {
+      console.error('Error subiendo imagen a ImgBB:', err);
+      const message = err instanceof Error ? err.message : 'No se pudo subir la imagen.';
+      setUploadError(message);
+    } finally {
+      setIsUploadingImage(false);
+    }
   };
 
   const handleChangePasswordSubmit = async (e: React.FormEvent) => {
@@ -940,18 +976,64 @@ export const AdminCatalogModal: React.FC = () => {
 
               {/* Image URL & Presets */}
               <div className="space-y-2">
-                <label className="block text-xs font-bold text-neutral-300">URL de Imagen del Producto</label>
-                <input
-                  type="text"
-                  value={formData.imageUrl || ''}
-                  onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                  placeholder="https://images.unsplash.com/..."
-                  className="w-full px-3.5 py-2 rounded-xl bg-[#141519] border border-neutral-700 text-xs text-white font-mono"
-                />
+                <label className="block text-xs font-bold text-neutral-300">Foto del Producto</label>
+
+                <div className="flex items-start gap-3">
+                  {formData.imageUrl && (
+                    <img
+                      src={formData.imageUrl}
+                      alt="Vista previa"
+                      className="w-16 h-16 rounded-lg object-cover border border-neutral-700 shrink-0 bg-neutral-900"
+                    />
+                  )}
+                  <div className="flex-1 space-y-2">
+                    <input
+                      type="text"
+                      value={formData.imageUrl || ''}
+                      onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
+                      placeholder="https://images.unsplash.com/... o sube una foto"
+                      className="w-full px-3.5 py-2 rounded-xl bg-[#141519] border border-neutral-700 text-xs text-white font-mono"
+                    />
+
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageFileUpload}
+                      className="hidden"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      disabled={isUploadingImage}
+                      className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-[11px] flex items-center gap-1.5 transition-colors"
+                    >
+                      {isUploadingImage ? (
+                        <>
+                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          <span>Subiendo…</span>
+                        </>
+                      ) : (
+                        <>
+                          <ImagePlus className="w-3.5 h-3.5" />
+                          <span>Subir foto desde mi equipo</span>
+                        </>
+                      )}
+                    </button>
+                    {uploadError && (
+                      <div className="text-[11px] text-red-400 font-semibold flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3 shrink-0" />
+                        <span>{uploadError}</span>
+                      </div>
+                    )}
+                    <p className="text-[10px] text-neutral-500">JPG, PNG o WEBP, máximo 5 MB.</p>
+                  </div>
+                </div>
+
                 <div className="flex items-center gap-1.5 flex-wrap">
                   <span className="text-[11px] text-neutral-500 flex items-center gap-1">
                     <ImageIcon className="w-3 h-3" />
-                    Fotos sugeridas:
+                    O elige una foto predeterminada:
                   </span>
                   {presetImages.map((preset, idx) => (
                     <button

@@ -75,6 +75,21 @@ se guardaban en el navegador de quien los hacía).
 4. Empieza en **modo de producción** (las reglas de seguridad ya las trae este proyecto en el archivo `firestore.rules`).
 5. Una vez creada, ve a la pestaña **Reglas** y reemplaza el contenido con el del archivo `firestore.rules` de este proyecto. Clic en **Publicar**.
 
+### 4b. Configurar ImgBB (fotos de producto que se suben desde el panel)
+
+Firebase Storage ahora exige activar el plan de pago "Blaze" (aunque el uso
+real se quede en $0), así que en vez de eso usamos **ImgBB**, un servicio de
+hospedaje de imágenes gratuito que no pide tarjeta.
+
+1. Entra a [api.imgbb.com](https://api.imgbb.com/) e inicia sesión (puedes usar tu cuenta de Google).
+2. Copia la **API key** que te muestra en esa página.
+3. Pégala en tu archivo `.env` como `VITE_IMGBB_API_KEY=tu_llave_aqui`.
+4. Agrega esa misma variable en Netlify/Vercel (igual que las de Firebase).
+
+Con esto, desde el panel de administración se puede subir una foto directo
+desde la computadora (botón "Subir foto desde mi equipo" al editar un
+producto) en vez de solo pegar una URL.
+
 ### 5. Configurar las variables de entorno del proyecto
 
 1. Copia el archivo `.env.example` y renómbralo a `.env`.

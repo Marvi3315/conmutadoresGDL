@@ -126,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -16, scale: 0.96 }}
               transition={{ type: "spring", stiffness: 320, damping: 28 }}
-              className="pointer-events-auto flex items-center justify-between mx-auto max-w-4xl bg-slate-950/90 dark:bg-[#0a0b0e]/90 backdrop-blur-2xl border border-white/15 dark:border-cyan-500/20 rounded-full py-1.5 px-3 sm:px-4 shadow-xl ring-1 ring-white/10 dark:ring-white/5 text-white"
+              className="pointer-events-auto flex items-center justify-between mx-auto max-w-5xl min-w-0 bg-slate-950/90 dark:bg-[#0a0b0e]/90 backdrop-blur-2xl border border-white/15 dark:border-cyan-500/20 rounded-full py-1.5 px-3 sm:px-4 shadow-xl ring-1 ring-white/10 dark:ring-white/5 text-white"
             >
               {/* Left: Brand Monogram & Live Status */}
               <a href="#" className="flex items-center gap-2.5 group shrink-0">
@@ -146,34 +146,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
               </a>
 
               {/* Center: Clean Navigation Links */}
-              <nav className="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-neutral-300">
+              <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 text-xs font-semibold text-neutral-300 min-w-0 shrink">
                 <a 
                   href="#servicios" 
-                  className="px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors"
+                  className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Servicios
                 </a>
                 <a 
                   href="#materiales" 
-                  className="px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors"
+                  className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Materiales
                 </a>
                 <a 
                   href="#syscom" 
-                  className="px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors"
+                  className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   SYSCOM
                 </a>
                 <a 
                   href="#calculadora-red" 
-                  className="px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors"
+                  className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Calculadora
                 </a>
                 <a 
                   href="#contacto" 
-                  className="px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors"
+                  className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Contacto
                 </a>

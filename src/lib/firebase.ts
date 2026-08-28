@@ -6,6 +6,11 @@ import { getFirestore, type Firestore } from 'firebase/firestore';
 // Son "públicas" por diseño de Firebase: no dan acceso a nada por sí solas,
 // el control de acceso real vive en las Reglas de Seguridad de Firestore
 // (archivo firestore.rules) y en Firebase Authentication.
+//
+// Nota: no usamos Firebase Storage aquí porque Google exige el plan de pago
+// Blaze (aunque el uso se quede en $0) para activarlo. Las fotos de producto
+// se suben en su lugar a ImgBB (ver src/lib/imgbb.ts), que es 100% gratis y
+// no pide tarjeta.
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
