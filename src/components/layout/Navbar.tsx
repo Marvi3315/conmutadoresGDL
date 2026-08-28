@@ -234,7 +234,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
               transition={{ type: "spring", stiffness: 320, damping: 28 }}
               className="pointer-events-auto w-full bg-white/90 dark:bg-[#0c0d10]/90 backdrop-blur-xl border border-slate-200/90 dark:border-neutral-800/90 rounded-2xl py-1.5 px-3 sm:px-4 lg:px-5 shadow-lg shadow-black/5 dark:shadow-black/40 ring-1 ring-slate-900/5 dark:ring-white/5 transition-all"
             >
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-between gap-2 min-w-0">
                 
                 {/* Logo & Compact Brand Title */}
                 <a href="#" className="flex items-center gap-2.5 group shrink-0">
@@ -372,7 +372,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                 </div>
 
                 {/* Desktop Action Trigger & Stylized Executive Direct Line */}
-                <div className="hidden lg:flex items-center gap-2 shrink-0">
+                <div className="hidden lg:flex items-center gap-1.5 xl:gap-2 shrink-0 min-w-0">
                   
                   {/* Theme Switcher */}
                   <motion.button
@@ -381,16 +381,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                     type="button"
                     onClick={toggleTheme}
                     aria-label={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-                    className="p-1.5 rounded-lg bg-slate-100 dark:bg-neutral-800/90 hover:bg-slate-200 dark:hover:bg-neutral-700 text-slate-700 dark:text-neutral-300 border border-slate-200 dark:border-neutral-700 transition-colors cursor-pointer"
+                    className="p-1.5 rounded-lg bg-slate-100 dark:bg-neutral-800/90 hover:bg-slate-200 dark:hover:bg-neutral-700 text-slate-700 dark:text-neutral-300 border border-slate-200 dark:border-neutral-700 transition-colors cursor-pointer shrink-0"
                     title={isDark ? 'Modo Claro' : 'Modo Oscuro'}
                   >
                     {isDark ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-slate-700" />}
                   </motion.button>
 
-                  {/* Stylized Executive Phone Capsule */}
+                  {/* Stylized Executive Phone Capsule — only shown once there's room (xl+) */}
                   <a 
                     href={`tel:${COMPANY_INFO.phoneDirect.replace(/\s/g, '')}`}
-                    className="group flex items-center gap-2 px-2.5 py-1 rounded-xl bg-slate-50 dark:bg-neutral-900/80 hover:bg-blue-50/80 dark:hover:bg-blue-950/40 border border-slate-200/80 dark:border-neutral-800 transition-all text-left"
+                    className="hidden xl:flex group items-center gap-2 px-2.5 py-1 rounded-xl bg-slate-50 dark:bg-neutral-900/80 hover:bg-blue-50/80 dark:hover:bg-blue-950/40 border border-slate-200/80 dark:border-neutral-800 transition-all text-left shrink-0"
                     title="Línea de Atención Directa con el Lic. Felipe Romo"
                   >
                     <div className="w-6 h-6 rounded-lg bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -413,7 +413,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                     whileTap={{ scale: 0.97 }}
                     type="button"
                     onClick={onOpenCalculator}
-                    className="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1 cursor-pointer border border-blue-400/30"
+                    className="shrink-0 bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1 cursor-pointer border border-blue-400/30"
                   >
                     <FileText className="w-3 h-3 text-cyan-200" />
                     <span>Cotizar</span>
@@ -426,7 +426,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                     href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Hola%20Licenciado%20Felipe%20Romo,%20deseo%20cotizar%20un%20servicio%20para%20mi%20empresa.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60 transition-all flex items-center justify-center shadow-xs"
+                    className="shrink-0 p-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60 transition-all flex items-center justify-center shadow-xs"
                     title="Chatear con el Licenciado Felipe Romo González por WhatsApp"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
