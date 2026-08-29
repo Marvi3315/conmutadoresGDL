@@ -40,13 +40,14 @@ export const EquipmentCatalog: React.FC<{ onOpenQuote: (serviceId?: string) => v
   });
 
   const handleRequestQuote = (item: EquipmentItem) => {
-    const message = `*SOLICITUD DE EQUIPO - CONMUTADORES GDL*%0A%0A` +
-      `📦 *Equipo:* ${item.name} (${item.model})%0A` +
-      `🏷️ *Marca:* ${item.brand}%0A` +
-      `📋 *Garantía:* ${item.warranty}%0A%0A` +
+    const message =
+      `*SOLICITUD DE EQUIPO - CONMUTADORES GDL*\n\n` +
+      `📦 *Equipo:* ${item.name} (${item.model})\n` +
+      `🏷️ *Marca:* ${item.brand}\n` +
+      `📋 *Garantía:* ${item.warranty}\n\n` +
       `Hola, requiero precio y disponibilidad con instalación en Guadalajara.`;
 
-    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   };
 
   return (

@@ -68,15 +68,16 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
   }, [items, selectedBrand, selectedCategory, searchQuery]);
 
   const handleWhatsAppQuote = (item: EquipmentItem) => {
-    const message = `*SOLICITUD DE COTIZACIÓN DE MATERIAL / ARTÍCULO*%0A%0A` +
-      `📦 *Artículo:* ${item.name}%0A` +
-      `🏷️ *Marca:* ${item.brand}%0A` +
-      `🔢 *Modelo / SKU:* ${item.model} (${item.sku || 'N/A'})%0A` +
-      `🔖 *Código SYSCOM:* ${item.syscomCode || 'N/A'}%0A` +
-      `🛡️ *Garantía:* ${item.warranty}%0A%0A` +
+    const message =
+      `*SOLICITUD DE COTIZACIÓN DE MATERIAL / ARTÍCULO*\n\n` +
+      `📦 *Artículo:* ${item.name}\n` +
+      `🏷️ *Marca:* ${item.brand}\n` +
+      `🔢 *Modelo / SKU:* ${item.model} (${item.sku || 'N/A'})\n` +
+      `🔖 *Código SYSCOM:* ${item.syscomCode || 'N/A'}\n` +
+      `🛡️ *Garantía:* ${item.warranty}\n\n` +
       `Hola Licenciado Felipe Romo, solicito precio unitario, existencias en Guadalajara y tiempo de entrega.`;
 
-    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   };
 
   return (

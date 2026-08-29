@@ -29,17 +29,18 @@ export const ContactSection: React.FC = () => {
   const handleBookSurvey = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const message = `*SOLICITUD DE LEVANTAMIENTO TÉCNICO EN SITIO (GRATUITO)*%0A%0A` +
-      `👤 *Solicitante:* ${surveyName}%0A` +
-      `🏢 *Empresa:* ${surveyCompany || 'No especificada'}%0A` +
-      `📞 *Teléfono:* ${surveyPhone}%0A` +
-      `📍 *Zona / Municipio:* ${surveyZone}%0A` +
-      `🔧 *Servicio / Interés:* ${surveyService}%0A` +
-      `📅 *Fecha Propuesta:* ${surveyDate || 'A coordinar'}%0A` +
-      `📝 *Requerimiento:* ${surveyNotes || 'Ninguno'}%0A%0A` +
+    const message =
+      `*SOLICITUD DE LEVANTAMIENTO TÉCNICO EN SITIO (GRATUITO)*\n\n` +
+      `👤 *Solicitante:* ${surveyName}\n` +
+      `🏢 *Empresa:* ${surveyCompany || 'No especificada'}\n` +
+      `📞 *Teléfono:* ${surveyPhone}\n` +
+      `📍 *Zona / Municipio:* ${surveyZone}\n` +
+      `🔧 *Servicio / Interés:* ${surveyService}\n` +
+      `📅 *Fecha Propuesta:* ${surveyDate || 'A coordinar'}\n` +
+      `📝 *Requerimiento:* ${surveyNotes || 'Ninguno'}\n\n` +
       `Hola Licenciado Felipe Romo, solicito programar la visita técnica sin costo en nuestras instalaciones.`;
 
-    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     setIsSurveyBooked(true);
   };
 

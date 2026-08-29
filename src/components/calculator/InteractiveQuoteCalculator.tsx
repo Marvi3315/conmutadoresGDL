@@ -179,22 +179,23 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
   const handleSendToWhatsApp = () => {
     const summaryLines = budget.itemizedList
       .map(it => `• ${it.item}: ${it.cost === 0 ? 'Incluido' : `$${it.cost.toLocaleString('es-MX')} MXN`}`)
-      .join('%0A');
+      .join('\n');
 
-    const message = `*SOLICITUD DE COTIZACIÓN - CONMUTADORES GDL*%0A%0A` +
-      `👤 *Cliente:* ${clientName || 'Cliente Web'}%0A` +
-      `🏢 *Empresa:* ${clientCompany || 'No indicada'}%0A` +
-      `📱 *Teléfono:* ${clientPhone || 'No indicado'}%0A` +
-      `📧 *Email:* ${clientEmail || 'No indicado'}%0A` +
-      `📍 *Zona ZMG:* ${selectedZone}%0A%0A` +
-      `⚙️ *Servicio:* ${getServiceLabel(serviceType)}%0A` +
-      `🔢 *Cantidad:* ${unitsCount} unidades / puntos%0A` +
-      `🏷️ *Tipo:* Instalación ${installType.toUpperCase()}%0A%0A` +
-      `📋 *Desglose Estimado:*%0A${summaryLines}%0A%0A` +
-      `💰 *Total Estimado (con IVA):* $${Math.round(budget.total).toLocaleString('es-MX')} MXN%0A%0A` +
+    const message =
+      `*SOLICITUD DE COTIZACIÓN - CONMUTADORES GDL*\n\n` +
+      `👤 *Cliente:* ${clientName || 'Cliente Web'}\n` +
+      `🏢 *Empresa:* ${clientCompany || 'No indicada'}\n` +
+      `📱 *Teléfono:* ${clientPhone || 'No indicado'}\n` +
+      `📧 *Email:* ${clientEmail || 'No indicado'}\n` +
+      `📍 *Zona ZMG:* ${selectedZone}\n\n` +
+      `⚙️ *Servicio:* ${getServiceLabel(serviceType)}\n` +
+      `🔢 *Cantidad:* ${unitsCount} unidades / puntos\n` +
+      `🏷️ *Tipo:* Instalación ${installType.toUpperCase()}\n\n` +
+      `📋 *Desglose Estimado:*\n${summaryLines}\n\n` +
+      `💰 *Total Estimado (con IVA):* $${Math.round(budget.total).toLocaleString('es-MX')} MXN\n\n` +
       `Solicito confirmar disponibilidad y programar el levantamiento físico en sitio sin costo.`;
 
-    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
   };
 

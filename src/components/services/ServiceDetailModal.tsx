@@ -54,15 +54,16 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
   const handleSubmitQuote = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `*SOLICITUD DE COTIZACIÓN - CONMUTADORES GDL*%0A%0A` +
-      `📌 *Servicio:* ${service.title}%0A` +
-      `👤 *Nombre:* ${clientName}%0A` +
-      `🏢 *Empresa:* ${clientCompany || 'No especificada'}%0A` +
-      `📱 *Teléfono:* ${clientPhone}%0A` +
-      `📝 *Requerimiento:* ${clientNotes || 'Solicito información y propuesta técnica.'}%0A` +
+    const message =
+      `*SOLICITUD DE COTIZACIÓN - CONMUTADORES GDL*\n\n` +
+      `📌 *Servicio:* ${service.title}\n` +
+      `👤 *Nombre:* ${clientName}\n` +
+      `🏢 *Empresa:* ${clientCompany || 'No especificada'}\n` +
+      `📱 *Teléfono:* ${clientPhone}\n` +
+      `📝 *Requerimiento:* ${clientNotes || 'Solicito información y propuesta técnica.'}\n` +
       `📍 *Ubicación:* Zona Metropolitana de Guadalajara`;
 
-    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     setIsSubmitted(true);
   };
 
