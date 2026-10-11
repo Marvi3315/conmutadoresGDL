@@ -6,7 +6,8 @@ import {
   Camera, 
   Network, 
   ShieldCheck, 
-  BellRing, 
+  BellRing,
+  Wifi, 
   Wrench, 
   MessageSquare, 
   ArrowRight, 
@@ -45,6 +46,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
       case 'Network': return Network;
       case 'ShieldCheck': return ShieldCheck;
       case 'BellRing': return BellRing;
+      case 'Wifi': return Wifi;
       case 'Wrench': return Wrench;
       default: return Cpu;
     }
@@ -166,7 +168,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
                 }}
                 className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-blue-300 dark:border-blue-700 text-xs font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-50"
               >
-                <span>Usar Cotizador Guiado</span>
+                <span>Solicitar Cotización</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

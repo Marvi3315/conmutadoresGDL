@@ -6,7 +6,6 @@ import {
   Clock, 
   Calendar, 
   MessageSquare, 
-  ShieldCheck, 
   CheckCircle2, 
   Send,
   Building,
@@ -22,7 +21,6 @@ export const ContactSection: React.FC = () => {
   const [surveyCompany, setSurveyCompany] = useState('');
   const [surveyZone, setSurveyZone] = useState('Guadalajara Centro y Minerva');
   const [surveyService, setSurveyService] = useState('Conmutadores Telefónicos IP');
-  const [surveyDate, setSurveyDate] = useState('');
   const [surveyNotes, setSurveyNotes] = useState('');
   const [isSurveyBooked, setIsSurveyBooked] = useState(false);
 
@@ -30,15 +28,14 @@ export const ContactSection: React.FC = () => {
     e.preventDefault();
     
     const message =
-      `*SOLICITUD DE LEVANTAMIENTO TÉCNICO EN SITIO (GRATUITO)*\n\n` +
+      `*SOLICITUD DE LEVANTAMIENTO TÉCNICO EN SITIO*\n\n` +
       `👤 *Solicitante:* ${surveyName}\n` +
       `🏢 *Empresa:* ${surveyCompany || 'No especificada'}\n` +
       `📞 *Teléfono:* ${surveyPhone}\n` +
       `📍 *Zona / Municipio:* ${surveyZone}\n` +
       `🔧 *Servicio / Interés:* ${surveyService}\n` +
-      `📅 *Fecha Propuesta:* ${surveyDate || 'A coordinar'}\n` +
       `📝 *Requerimiento:* ${surveyNotes || 'Ninguno'}\n\n` +
-      `Hola Licenciado Felipe Romo, solicito programar la visita técnica sin costo en nuestras instalaciones.`;
+      `Hola Licenciado Felipe Romo, solicito programar una visita técnica en nuestras instalaciones.`;
 
     window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     setIsSurveyBooked(true);
@@ -147,7 +144,7 @@ export const ContactSection: React.FC = () => {
                     <div className="space-y-1 text-xs text-slate-700 dark:text-neutral-300">
                       <div className="flex justify-between py-1 border-b border-slate-100 dark:border-neutral-800/80">
                         <span className="font-semibold text-slate-900 dark:text-white">Lunes a Viernes:</span>
-                        <span className="font-mono text-slate-600 dark:text-neutral-300 font-bold">9:00 a.m. – 7:00 p.m.</span>
+                        <span className="font-mono text-slate-600 dark:text-neutral-300 font-bold">9:00 a.m. – 6:00 p.m.</span>
                       </div>
                       <div className="flex justify-between py-1 border-b border-slate-100 dark:border-neutral-800/80">
                         <span className="font-semibold text-slate-900 dark:text-white">Sábados y Domingos:</span>
@@ -164,15 +161,11 @@ export const ContactSection: React.FC = () => {
             </div>
           </FadeInUp>
 
-          {/* Right: Free Site Survey Booking Form (7 cols) */}
+          {/* Right: Site Survey Booking Form (7 cols) */}
           <FadeInUp delay={120} distance={24} className="lg:col-span-7">
             <div className="p-6 sm:p-9 rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 shadow-xl relative overflow-hidden">
               
               <div className="pb-5 mb-6 border-b border-slate-100 dark:border-neutral-800/80">
-                <div className="inline-flex items-center gap-1.5 text-xs text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800/80 px-3 py-1 rounded-full font-bold uppercase tracking-wider mb-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                  <span>100% Gratuito en la Zona Metropolitana de Guadalajara</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white tracking-tight">
                   Agendar Levantamiento en Sitio
                 </h3>
@@ -249,7 +242,7 @@ export const ContactSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-slate-700 dark:text-neutral-300 mb-1.5">Servicio Principal a Revisar</label>
                       <select
@@ -261,18 +254,9 @@ export const ContactSection: React.FC = () => {
                         <option value="CCTV & Cámaras de Seguridad 4K">CCTV & Cámaras de Seguridad 4K</option>
                         <option value="Cableado Estructurado & Fibra Óptica">Cableado Estructurado & Fibra Óptica</option>
                         <option value="Control de Acceso & Biometría">Control de Acceso & Biometría</option>
-                        <option value="Alarmas & Cercas Eléctricas">Alarmas & Cercas Eléctricas</option>
+                        <option value="Equipos de Redes: Switch, Router & WiFi">Equipos de Redes: Switch, Router & WiFi</option>
                         <option value="Póliza de Mantenimiento Integral">Póliza de Mantenimiento Integral</option>
                       </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-slate-700 dark:text-neutral-300 mb-1.5">Fecha Tentativa Preferida</label>
-                      <input
-                        type="date"
-                        value={surveyDate}
-                        onChange={(e) => setSurveyDate(e.target.value)}
-                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-2xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
-                      />
                     </div>
                   </div>
 

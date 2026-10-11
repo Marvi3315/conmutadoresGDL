@@ -17,7 +17,8 @@ import {
   Moon,
   ArrowRight,
   Radio,
-  Layers
+  Layers,
+  Wifi
 } from 'lucide-react';
 import { COMPANY_INFO } from '../../data/telecomData';
 import { PhoneHandsetLogo } from '../ui/PhoneHandsetLogo';
@@ -84,11 +85,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
       color: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20' 
     },
     { 
-      id: 'alarmas-cercas-electricas', 
-      name: 'Alarmas & Cercas Eléctricas', 
-      icon: ShieldCheck, 
-      desc: 'Protección perimetral inteligente y monitoreo 24/7', 
-      badge: 'Seguridad',
+      id: 'equipos-redes', 
+      name: 'Equipos de Redes: Switch, Router & WiFi', 
+      icon: Wifi, 
+      desc: 'Switches PoE, routers y access points WiFi 6 configurados', 
+      badge: 'Redes',
       color: 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20' 
     },
     { 
@@ -154,10 +155,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                   Servicios
                 </a>
                 <a 
-                  href="#materiales" 
+                  href="#productos" 
                   className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
-                  Materiales
+                  Productos
                 </a>
                 <a 
                   href="#syscom" 
@@ -330,12 +331,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                     </AnimatePresence>
                   </div>
                   
-                  {/* Materiales */}
+                  {/* Productos */}
                   <a 
-                    href="#materiales" 
+                    href="#productos" 
                     className="px-3 py-1.5 rounded-lg text-slate-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-neutral-800/80 transition-colors"
                   >
-                    Materiales
+                    Productos
                   </a>
 
                   {/* SYSCOM */}
@@ -366,7 +367,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                 {/* Tablet Navigation Links (For screens between lg and xl) */}
                 <div className="hidden lg:flex xl:hidden items-center gap-1 text-xs font-semibold text-slate-700 dark:text-neutral-300">
                   <a href="#servicios" className="px-2.5 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800/80">Servicios</a>
-                  <a href="#materiales" className="px-2.5 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800/80">Materiales</a>
+                  <a href="#productos" className="px-2.5 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800/80">Productos</a>
                   <a href="#syscom" className="px-2.5 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800/80">SYSCOM</a>
                   <a href="#contacto" className="px-2.5 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800/80">Contacto</a>
                 </div>
@@ -504,11 +505,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
 
                     <div className="space-y-1 text-xs font-semibold text-slate-700 dark:text-neutral-300">
                       <a 
-                        href="#materiales" 
+                        href="#productos" 
                         onClick={() => setMobileMenuOpen(false)}
                         className="block p-2 text-slate-800 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-neutral-800/80 rounded-xl"
                       >
-                        Materiales
+                        Productos
                       </a>
                       <a 
                         href="#syscom" 

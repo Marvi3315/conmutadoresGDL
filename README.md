@@ -1,6 +1,6 @@
 # Conmutadores GDL
 
-Sitio web corporativo de Conmutadores GDL, especialistas en telecomunicaciones, conmutadores IP, CCTV, alarmas, control de acceso y cableado estructurado en Guadalajara y la ZMG.
+Sitio web corporativo de Conmutadores GDL, especialistas en telecomunicaciones, conmutadores IP, CCTV, equipos de redes y WiFi, control de acceso y cableado estructurado en Guadalajara y la ZMG.
 
 ## Stack
 
@@ -132,3 +132,7 @@ sistema de contraseñas de Firebase (mucho más seguro que un PIN guardado en el
 navegador). Si Felipe olvida su contraseña, puede usar el enlace **"¿Olvidaste
 tu contraseña?"** en la pantalla de acceso, que le envía un correo de
 recuperación automáticamente.
+
+## Logos de marcas
+
+Los logos de las marcas (tarjetas de **Productos** y sección **Marcas Líderes**) se leen de `public/logos/<marca>.svg` (o `.png`), con el nombre en minúsculas y sin espacios (por ejemplo `panduit.svg`, `linkedpro.svg`, `commscope.svg`). Si el archivo no existe, la página muestra el nombre de la marca en MAYÚSCULAS. Ver `public/logos/LEEME.txt`.

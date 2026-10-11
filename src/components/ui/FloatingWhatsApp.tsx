@@ -31,7 +31,7 @@ export const FloatingWhatsApp: React.FC = () => {
     {
       title: 'Agendar Visita en GDL (Gratis)',
       desc: 'Levantamiento físico en tus instalaciones',
-      text: 'Hola, me gustaría agendar un levantamiento técnico sin costo en Guadalajara.',
+      text: 'Hola, me gustaría agendar un levantamiento técnico en Guadalajara.',
       icon: Calendar,
       color: 'text-emerald-600 dark:text-emerald-400',
     },

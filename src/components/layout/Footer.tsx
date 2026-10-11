@@ -217,7 +217,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
                 <Clock className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
                   <div className="font-semibold text-slate-200">Horarios de Atención:</div>
-                  <div className="text-slate-300 font-medium">Lunes a Viernes: 9:00 a.m. – 7:00 p.m.</div>
+                  <div className="text-slate-300 font-medium">Lunes a Viernes: 9:00 a.m. – 6:00 p.m.</div>
                   <div className="text-slate-500">Sábados y Domingos: Cerrado</div>
                   <div className="text-[11px] text-emerald-400 font-medium pt-0.5">Atención técnica y soporte a empresas</div>
                 </div>

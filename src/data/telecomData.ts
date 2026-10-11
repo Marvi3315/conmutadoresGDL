@@ -17,13 +17,13 @@ export const COMPANY_INFO = {
   whatsappNumber: '5213334455760',
   whatsappFormatted: '+52 1 33 3445 5760',
   email: 'conmutadoresgdl@gmail.com',
-  serviceHours: 'Lun - Vie: 9:00 AM - 7:00 PM',
+  serviceHours: 'Lun - Vie: 9:00 AM - 6:00 PM',
   hoursDetail: {
-    lunes: '9:00 a.m. – 7:00 p.m.',
-    martes: '9:00 a.m. – 7:00 p.m.',
-    miercoles: '9:00 a.m. – 7:00 p.m.',
-    jueves: '9:00 a.m. – 7:00 p.m.',
-    viernes: '9:00 a.m. – 7:00 p.m.',
+    lunes: '9:00 a.m. – 6:00 p.m.',
+    martes: '9:00 a.m. – 6:00 p.m.',
+    miercoles: '9:00 a.m. – 6:00 p.m.',
+    jueves: '9:00 a.m. – 6:00 p.m.',
+    viernes: '9:00 a.m. – 6:00 p.m.',
     sabado: 'Cerrado',
     domingo: 'Cerrado'
   },
@@ -53,8 +53,8 @@ export const SYSCOM_PARTNER_INFO = {
     { name: 'Cisco', category: 'Networking Empresarial', logoText: 'CISCO' },
     { name: 'Belden', category: 'Cables de Alto Desempeño', logoText: 'BELDEN' },
     { name: 'ZKTeco', category: 'Control de Acceso y Asistencia', logoText: 'ZKTECO' },
-    { name: 'Charofil', category: 'Canalización y Charolas', logoText: 'CHAROFIL' },
-    { name: 'Fanvil', category: 'Teléfonos e Intercoms IP', logoText: 'Fanvil' },
+    { name: 'Linkedpro', category: 'Cableado y Conectividad', logoText: 'LINKEDPRO' },
+    { name: 'Commscope', category: 'Infraestructura de Red', logoText: 'COMMSCOPE' },
     { name: 'Honeywell', category: 'Seguridad e Incendio', logoText: 'Honeywell' },
   ]
 };
@@ -77,7 +77,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Integración con CRM (HubSpot, Salesforce, Zoho) y WhatsApp API',
       'Mantenimiento a conmutadores tradicionales Panasonic, Avaya, Siemens'
     ],
-    brands: ['Grandstream', 'Panasonic', 'Fanvil', 'Avaya', 'Cisco', 'FreePBX'],
+    brands: ['Grandstream', 'Panasonic', 'Avaya', 'Cisco', 'FreePBX'],
     benefits: [
       'Ahorro de hasta 65% frente a líneas tradicionales de cobre',
       'Movilidad total para equipos comerciales y trabajo híbrido',
@@ -194,37 +194,36 @@ export const SERVICES_DATA: ServiceItem[] = [
     idealFor: 'Empresas y administradores que requieren restringir accesos y auditar asistencias.'
   },
   {
-    id: 'alarmas-cercas-electricas',
-    title: 'Alarmas Contra Robo, Incendio & Cercas Electrificadas',
-    shortDescription: 'Sistemas de alarma inalámbricos y cableados, sensores fotoeléctricos perimetrales, detección de humo y cercas de alto voltaje.',
-    fullDescription: 'Disuasión inmediata contra intentos de intrusión y robo. Instalamos paneles de alarma de respuesta ultra rápida con comunicación dual (Wi-Fi + Red Celular 4G LTE), sensores infrarrojos inmunes a mascotas y cercas electrificadas certificadas con sirenas de 120 dB.',
-    iconName: 'BellRing',
-    category: 'seguridad',
-    badge: 'Protección Activa',
+    id: 'equipos-redes',
+    title: 'Equipos de Redes: Switch, Router & WiFi',
+    shortDescription: 'Suministro, configuración e instalación de switches administrables, routers, access points WiFi y firewalls para tu empresa.',
+    fullDescription: 'Diseñamos e implementamos la red de datos de tu negocio: switches PoE administrables, routers balanceadores de carga, access points WiFi 6 con roaming transparente y segmentación por VLAN para separar voz, cámaras, invitados y operación. Todo configurado, etiquetado y documentado.',
+    iconName: 'Wifi',
+    category: 'redes',
+    badge: 'Redes Empresariales',
     features: [
-      'Paneles de alarma híbridos e inalámbricos de largo alcance de grado militar',
-      'Sensores de movimiento inmunes a mascotas pequeñas y medianas',
-      'Contactos magnéticos para puertas, cortinas metálicas y ventanas',
-      'Cercas electrificadas de 5 a 8 líneas con aisladores reforzados y energizador certificado',
-      'Sensores fotoeléctricos de rayo infrarrojo para bardas perimetrales',
-      'Detección oportuna de humo, temperatura y gas para prevención de siniestros'
+      'Switches administrables y PoE/PoE+ de 8, 24 y 48 puertos',
+      'Routers y firewalls con balanceo de múltiples enlaces de internet',
+      'Access points WiFi 6 con cobertura uniforme y roaming sin cortes',
+      'Segmentación por VLAN para voz, cámaras, invitados y administración',
+      'Configuración, etiquetado y documentación de la red',
+      'Racks, patch panels y cableado estructurado certificado'
     ],
-    brands: ['DSC', 'Honeywell', 'Paradox', 'YONUSA', 'Bosch'],
+    brands: ['Cisco', 'Dahua', 'Hikvision', 'Grandstream', 'Panduit', 'Linkedpro', 'Commscope'],
     benefits: [
-      'Alerta inmediata en tu smartphone en menos de 2 segundos ante intrusión',
-      'Disuasión física y psicológica contundente para delincuentes',
-      'Baterías de respaldo integradas (opera incluso si cortan la luz de la calle)',
-      'Sin contratos forzosos con centrales si prefieres automonitoreo en app'
+      'Red estable y rápida para telefonía IP, cámaras y sistemas en la nube',
+      'Cobertura WiFi en toda la oficina, bodega o local',
+      'Mayor seguridad al separar redes de invitados y operativas',
+      'Soporte técnico local en Guadalajara'
     ],
     popularUseCases: [
-      'Bodegas de mercancía de alto valor',
-      'Locales comerciales y farmacias',
-      'Casas habitación y quintas campestres en Chapala y Ajijic',
-      'Patios de maniobras y estacionamientos'
+      'Oficinas y corporativos',
+      'Bodegas y naves industriales',
+      'Locales comerciales y restaurantes',
+      'Escuelas, clínicas y hoteles'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=1000&q=80',
-    startingPrice: 'Desde $4,200 MXN',
-    idealFor: 'Inmuebles que requieren blindaje contra allanamiento y robo.'
+    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80',
+    idealFor: 'Negocios que necesitan una red de datos y WiFi confiable y bien configurada.'
   },
   {
     id: 'reparacion-soporte-tecnico',
@@ -242,7 +241,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Reparación de grabadores NVR/DVR de CCTV y reposición de fuentes',
       'Atención técnica directa coordinada por Felipe Romo'
     ],
-    brands: ['Grandstream', 'Panasonic', 'Hikvision', 'Cisco', 'Fanvil', 'Multimarca'],
+    brands: ['Grandstream', 'Panasonic', 'Hikvision', 'Cisco', 'Multimarca'],
     benefits: [
       'Servicio por evento sin contratos forzosos',
       'Refacciones y tarjetas originales para conmutadores',
@@ -717,7 +716,7 @@ export const COVERAGE_ZONES: CoverageZone[] = [
     area: 'Guadalajara Centro, Zapopan, Providencia, Puerta de Hierro, Tlaquepaque, Tonalá, El Salto, Tlajomulco',
     responseTime: '< 45 - 60 minutos',
     techniciansCount: 12,
-    highlightedProjects: ['Levantamiento Técnico Sin Costo', 'Instalación en Sitio', 'Cuadrillas de Emergencia', 'Atención Inmediata'],
+    highlightedProjects: ['Levantamiento Técnico en Sitio', 'Instalación en Sitio', 'Cuadrillas de Emergencia', 'Atención Inmediata'],
     isExpressZone: true
   },
   {
@@ -771,7 +770,7 @@ export const MAINTENANCE_PLANS: MaintenancePlan[] = [
     recommendedFor: 'Negocios con hasta 15 extensiones y 8 cámaras',
     features: [
       { name: 'Visita de mantenimiento preventivo bimensual', included: true },
-      { name: 'Soporte remoto y telefónico ilimitado (Lun-Vie 9:00 a 19:00)', included: true },
+      { name: 'Soporte remoto y telefónico ilimitado (Lun-Vie 9:00 a 18:00)', included: true },
       { name: 'Respaldo de configuraciones de conmutador y NVR', included: true },
       { name: 'Revisión de voltajes, baterías UPS y cableado', included: true },
       { name: 'Descuento del 15% en refacciones y equipo nuevo', included: true },
@@ -790,7 +789,7 @@ export const MAINTENANCE_PLANS: MaintenancePlan[] = [
     features: [
       { name: 'Visita de mantenimiento preventivo mensual programado', included: true },
       { name: 'Visitas correctivas ILIMITADAS sin costo de mano de obra', included: true },
-      { name: 'Soporte remoto y telefónico prioritario (Lun-Vie 9:00 a 19:00)', included: true },
+      { name: 'Soporte remoto y telefónico prioritario (Lun-Vie 9:00 a 18:00)', included: true },
       { name: 'Equipo de préstamo en caliente (Hot Swap si falla el conmutador)', included: true },
       { name: 'Descuento del 25% en refacciones e insumos', included: true },
       { name: 'Tiempo de respuesta en sitio: < 2 horas en emergencias', included: true },
@@ -820,7 +819,7 @@ export const MAINTENANCE_PLANS: MaintenancePlan[] = [
 export const FAQ_ITEMS = [
   {
     q: '¿Qué marcas de conmutadores telefónicos y material manejan?',
-    a: 'Somos integradores autorizados SYSCOM y distribuidores de Panduit, Panasonic, Grandstream, Hikvision, Ubiquiti, Dahua, Cisco, Belden, ZKTeco y Charofil. Suministramos conmutadores IP, teléfonos propietarios, tarjetas de expansión, bobinas de cable 100% cobre, patch panels, cámaras 4K y accesorios con garantía directa.'
+    a: 'Somos integradores autorizados SYSCOM y distribuidores de Panduit, Panasonic, Grandstream, Hikvision, Dahua, Cisco, Belden, ZKTeco, Linkedpro y Commscope. Suministramos conmutadores IP, teléfonos propietarios, tarjetas de expansión, bobinas de cable 100% cobre, patch panels, cámaras 4K y accesorios con garantía directa.'
   },
   {
     q: '¿Tienen venta de material y envíos a toda la República Mexicana?',
@@ -836,7 +835,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: '¿Realizan visitas de levantamiento técnico en Guadalajara y proyectos foráneos?',
-    a: 'Sí, realizamos visitas técnicas de levantamiento sin costo en Guadalajara, Zapopan y municipios de Jalisco, así como asesoría y proyectos llave en mano con soporte remoto y cuadrillas técnicas para proyectos en toda la República Mexicana.'
+    a: 'Sí, realizamos visitas técnicas de levantamiento en Guadalajara, Zapopan y municipios de Jalisco, así como asesoría y proyectos llave en mano con soporte remoto y cuadrillas técnicas para proyectos en toda la República Mexicana.'
   },
   {
     q: '¿Qué garantía tienen las instalaciones y equipos suministrados?',

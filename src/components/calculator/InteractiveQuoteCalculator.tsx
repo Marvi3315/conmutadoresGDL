@@ -7,6 +7,7 @@ import {
   Network, 
   ShieldCheck, 
   Wrench, 
+  Wifi, 
   CheckCircle2, 
   ArrowRight, 
   ArrowLeft, 
@@ -64,106 +65,11 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
 
   if (!isOpen) return null;
 
-  // Real-world dynamic estimation calculation logic (in MXN)
-  const calculateBudget = () => {
-    let baseHardware = 0;
-    let laborInstallation = 0;
-    let recommendedHardware = '';
-    let itemizedList: { item: string; cost: number }[] = [];
-
-    if (serviceType === 'conmutadores-ip') {
-      if (unitsCount <= 8) {
-        baseHardware = 7800;
-        recommendedHardware = 'Conmutador IP Grandstream UCM6301 + Teléfonos IP Grandstream HD';
-      } else if (unitsCount <= 24) {
-        baseHardware = 16500;
-        recommendedHardware = 'Conmutador IP Grandstream UCM6302 + Teléfonos Gigabit PoE';
-      } else if (unitsCount <= 50) {
-        baseHardware = 32000;
-        recommendedHardware = 'Conmutador IP Grandstream UCM6304 + Consola de Operadora + Teléfonos Ejecutivos';
-      } else {
-        baseHardware = 58000;
-        recommendedHardware = 'Conmutador IP Grandstream Enterprise UCM6308 / Servidor FreePBX HA';
-      }
-
-      const phonesTotal = unitsCount * 1150;
-      itemizedList.push({ item: recommendedHardware, cost: baseHardware });
-      itemizedList.push({ item: `${unitsCount}x Teléfonos IP Gigabit PoE con Audio HD`, cost: phonesTotal });
-
-      laborInstallation = unitsCount * 450 + 2500;
-      itemizedList.push({ item: 'Programación de PBX, IVR, Colas de Espera y Rutas SIP', cost: laborInstallation });
-
-      if (includeSoftphoneApp) {
-        itemizedList.push({ item: 'Configuración de App Móvil (Android/iOS) por usuario', cost: 0 });
-      }
-      if (includeCallRecording) {
-        itemizedList.push({ item: 'Módulo de Grabación Centralizada de Llamadas', cost: 1800 });
-      }
-    } else if (serviceType === 'cctv-videovigilancia') {
-      if (unitsCount <= 8) {
-        baseHardware = 8500;
-        recommendedHardware = 'NVR 8 Canales 4K PoE Hikvision AcuSense + Disco 4TB WD Purple';
-      } else if (unitsCount <= 16) {
-        baseHardware = 18900;
-        recommendedHardware = 'NVR 16 Canales 4K PoE Hikvision + 2x Discos 6TB WD Purple';
-      } else if (unitsCount <= 32) {
-        baseHardware = 36000;
-        recommendedHardware = 'NVR 32 Canales 4K Enterprise Dahua/Hikvision + 4x Discos 8TB RAID';
-      } else {
-        baseHardware = 64000;
-        recommendedHardware = 'Servidor VMS Milestone / HikCentral + Almacenamiento SAN/NAS';
-      }
-
-      const camerasTotal = unitsCount * 1450;
-      itemizedList.push({ item: recommendedHardware, cost: baseHardware });
-      itemizedList.push({ item: `${unitsCount}x Cámaras IP Domo/Bala 4K con Visión Nocturna ColorVu & IA`, cost: camerasTotal });
-
-      laborInstallation = unitsCount * 650 + 1500;
-      itemizedList.push({ item: 'Instalación, orientación, canalización y configuración de app móvil Hik-Connect', cost: laborInstallation });
-    } else if (serviceType === 'cableado-redes-fibra') {
-      recommendedHardware = `${unitsCount} Nodos Cat6 100% Cobre Panduit/Belden + Patch Panel + Switch Gigabit PoE`;
-      baseHardware = unitsCount * 850 + 6500;
-      laborInstallation = unitsCount * 400 + 1800;
-
-      itemizedList.push({ item: recommendedHardware, cost: baseHardware });
-      itemizedList.push({ item: 'Tendido de cableado, peinado de rack y conectorización RJ45', cost: laborInstallation });
-
-      if (includeFlukeCert) {
-        itemizedList.push({ item: 'Certificación de reflectometría y atenuación con Fluke DSX-8000', cost: unitsCount * 180 });
-      }
-    } else if (serviceType === 'control-acceso-asistencia') {
-      baseHardware = unitsCount * 6500;
-      laborInstallation = unitsCount * 1800;
-      itemizedList.push({ item: `${unitsCount}x Terminales Biométricas de Reconocimiento Facial / Huella ZKTeco + Chapas Magnéticas 600lbs`, cost: baseHardware });
-      itemizedList.push({ item: 'Instalación electromecánica, sensor infrarrojo, botón no-touch y enrolamiento', cost: laborInstallation });
-    } else {
-      baseHardware = 4500;
-      laborInstallation = 3000;
-      itemizedList.push({ item: 'Diagnóstico en sitio, refacciones y reconfiguración integral de sistema', cost: baseHardware + laborInstallation });
-    }
-
-    if (includeUPSBackup) {
-      itemizedList.push({ item: 'UPS No-Break Grado Servidor Smart-Online 1500VA', cost: 4200 });
-    }
-
-    if (includeMaintenancePolicy) {
-      itemizedList.push({ item: 'Póliza Preventiva y Soporte Técnico de Guardia (1er mes incluido)', cost: 0 });
-    }
-
-    const subtotal = itemizedList.reduce((acc, curr) => acc + curr.cost, 0);
-    const iva = subtotal * 0.16;
-    const total = subtotal + iva;
-
-    return {
-      subtotal,
-      iva,
-      total,
-      itemizedList,
-      recommendedHardware
-    };
+  const installLabels: Record<string, string> = {
+    nueva: 'Instalación nueva',
+    migracion: 'Migración / Ampliación',
+    mantenimiento: 'Revisión y soporte',
   };
-
-  const budget = calculateBudget();
 
   const getServiceLabel = (id: string) => {
     switch (id) {
@@ -171,15 +77,17 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
       case 'cctv-videovigilancia': return 'CCTV & Cámaras de Seguridad 4K con IA';
       case 'cableado-redes-fibra': return 'Cableado Estructurado & Fibra Óptica';
       case 'control-acceso-asistencia': return 'Control de Acceso & Biometría';
-      case 'alarmas-cercas-electricas': return 'Alarmas & Seguridad Perimetral';
+      case 'equipos-redes': return 'Equipos de Redes: Switch, Router & WiFi';
       default: return 'Servicio Especializado TI';
     }
   };
 
   const handleSendToWhatsApp = () => {
-    const summaryLines = budget.itemizedList
-      .map(it => `• ${it.item}: ${it.cost === 0 ? 'Incluido' : `$${it.cost.toLocaleString('es-MX')} MXN`}`)
-      .join('\n');
+    const addons: string[] = [];
+    if (includeUPSBackup) addons.push('UPS No-Break');
+    if (serviceType === 'conmutadores-ip' && includeCallRecording) addons.push('Grabación de llamadas');
+    if (serviceType === 'conmutadores-ip' && includeSoftphoneApp) addons.push('App móvil');
+    if (serviceType === 'cableado-redes-fibra' && includeFlukeCert) addons.push('Certificación Fluke');
 
     const message =
       `*SOLICITUD DE COTIZACIÓN - CONMUTADORES GDL*\n\n` +
@@ -187,13 +95,12 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
       `🏢 *Empresa:* ${clientCompany || 'No indicada'}\n` +
       `📱 *Teléfono:* ${clientPhone || 'No indicado'}\n` +
       `📧 *Email:* ${clientEmail || 'No indicado'}\n` +
-      `📍 *Zona ZMG:* ${selectedZone}\n\n` +
+      `📍 *Zona:* ${selectedZone}\n\n` +
       `⚙️ *Servicio:* ${getServiceLabel(serviceType)}\n` +
       `🔢 *Cantidad:* ${unitsCount} unidades / puntos\n` +
-      `🏷️ *Tipo:* Instalación ${installType.toUpperCase()}\n\n` +
-      `📋 *Desglose Estimado:*\n${summaryLines}\n\n` +
-      `💰 *Total Estimado (con IVA):* $${Math.round(budget.total).toLocaleString('es-MX')} MXN\n\n` +
-      `Solicito confirmar disponibilidad y programar el levantamiento físico en sitio sin costo.`;
+      `🏷️ *Tipo de proyecto:* ${installLabels[installType]}\n` +
+      `➕ *Complementos:* ${addons.length ? addons.join(', ') : 'Ninguno'}\n\n` +
+      `Hola Licenciado Felipe Romo, solicito una cotización con estos datos.`;
 
     window.open(`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
@@ -210,9 +117,9 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
               <Calculator className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-xs uppercase tracking-widest text-blue-200 font-bold">Simulador Interactivo</div>
+              <div className="text-xs uppercase tracking-widest text-blue-200 font-bold">Solicitud de Cotización</div>
               <h2 className="text-lg sm:text-xl font-black text-white">
-                Cotizador en Línea &middot; Telecomunicaciones & Seguridad GDL
+                Cuéntanos qué necesitas &middot; Conmutadores GDL
               </h2>
             </div>
           </div>
@@ -262,7 +169,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
               3
             </div>
             <span className={step === 3 ? 'text-blue-600 dark:text-blue-400 font-bold' : 'text-slate-500'}>
-              Presupuesto & Envío
+              Datos & Envío
             </span>
           </div>
         </div>
@@ -283,7 +190,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                     { id: 'cctv-videovigilancia', name: 'CCTV & Cámaras 4K', icon: Camera, desc: 'NVR con IA y visión ColorVu' },
                     { id: 'cableado-redes-fibra', name: 'Cableado & Fibra Óptica', icon: Network, desc: 'Cat6/6A y racks certificados' },
                     { id: 'control-acceso-asistencia', name: 'Control de Acceso', icon: ShieldCheck, desc: 'Facial, biométrico y chapas' },
-                    { id: 'alarmas-cercas-electricas', name: 'Alarmas & Cercas', icon: ShieldCheck, desc: 'Sensores y sirenas perimetrales' },
+                    { id: 'equipos-redes', name: 'Switch, Router & WiFi', icon: Wifi, desc: 'Equipos de red y cobertura inalámbrica' },
                     { id: 'reparacion-soporte-tecnico', name: 'Póliza o Reparación', icon: Wrench, desc: 'Mantenimiento preventivo/correctivo' },
                   ].map((srv) => {
                     const Icon = srv.icon;
@@ -464,55 +371,32 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
           {step === 3 && (
             <div className="space-y-6 animate-in fade-in duration-200">
               
-              {/* Estimated Breakdown Table */}
-              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
-                  <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white text-sm">Resumen de Propuesta Técnica Estimada</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">{getServiceLabel(serviceType)} ({unitsCount} unidades)</p>
-                  </div>
-                  <span className="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 text-xs font-bold border border-emerald-200 dark:border-emerald-800">
-                    Incluye Instalación
-                  </span>
-                </div>
-
-                <div className="space-y-2 text-xs">
-                  {budget.itemizedList.map((item, idx) => (
-                    <div key={idx} className="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-300">
-                      <div className="flex items-center gap-2 max-w-[70%]">
-                        <Check className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
-                        <span className="truncate">{item.item}</span>
-                      </div>
-                      <span className="font-mono font-bold text-slate-900 dark:text-white">
-                        {item.cost === 0 ? 'Incluido' : `$${item.cost.toLocaleString('es-MX')} MXN`}
-                      </span>
+              {/* Request summary (sin precios) */}
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
+                <h3 className="font-bold text-slate-900 dark:text-white text-sm pb-3 border-b border-slate-200 dark:border-slate-700">Resumen de tu solicitud</h3>
+                <div className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
+                  {[
+                    ['Servicio', getServiceLabel(serviceType)],
+                    ['Cantidad', `${unitsCount} ${unitsCount === 1 ? 'unidad' : 'unidades'}`],
+                    ['Tipo de proyecto', installLabels[installType]],
+                    ['Zona', selectedZone],
+                  ].map(([k, v]) => (
+                    <div key={k} className="flex items-start justify-between gap-4 py-1.5 border-b border-slate-100 dark:border-slate-800">
+                      <span className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white"><Check className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />{k}</span>
+                      <span className="text-right">{v}</span>
                     </div>
                   ))}
                 </div>
-
-                {/* Subtotal & Total */}
-                <div className="pt-3 border-t border-slate-200 dark:border-slate-700 space-y-1.5 text-right font-mono">
-                  <div className="text-xs text-slate-500 dark:text-slate-400">
-                    Subtotal Estimado: <span className="text-slate-800 dark:text-slate-200 font-bold">${Math.round(budget.subtotal).toLocaleString('es-MX')} MXN</span>
-                  </div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400">
-                    IVA (16%): <span className="text-slate-800 dark:text-slate-200">${Math.round(budget.iva).toLocaleString('es-MX')} MXN</span>
-                  </div>
-                  <div className="text-base sm:text-lg text-slate-900 dark:text-white font-extrabold flex items-center justify-end gap-2 pt-1">
-                    <span className="text-xs font-sans uppercase tracking-wider text-slate-600 dark:text-slate-400 font-bold">Total Estimado con IVA:</span>
-                    <span className="text-blue-600 dark:text-blue-400">${Math.round(budget.total).toLocaleString('es-MX')} MXN</span>
-                  </div>
-                  <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans text-right">
-                    *Precios sujetos a validación de distancias en levantamiento físico sin costo.
-                  </div>
-                </div>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                  Con estos datos Felipe te enviará la cotización por WhatsApp.
+                </p>
               </div>
 
               {/* Client Details Form */}
               <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                  <span>Datos de Contacto para Formalizar Propuesta & Visita en Sitio</span>
+                  <span>Tus datos de contacto</span>
                 </h4>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -565,7 +449,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                     className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <MessageSquare className="w-4 h-4" />
-                    <span>Enviar Cotización a WhatsApp Técnico</span>
+                    <span>Enviar solicitud por WhatsApp</span>
                   </button>
                   <button
                     type="button"
@@ -573,7 +457,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                     className="py-3 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer shrink-0"
                   >
                     <Printer className="w-4 h-4 text-slate-500" />
-                    <span>Imprimir Resumen</span>
+                    <span>Imprimir</span>
                   </button>
                 </div>
               </div>
@@ -602,7 +486,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
               onClick={() => setStep(step + 1)}
               className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-2 shadow-sm transition-all cursor-pointer"
             >
-              <span>Siguiente: {step === 1 ? 'Complementos y Zona' : 'Ver Desglose y Total'}</span>
+              <span>Siguiente: {step === 1 ? 'Complementos y Zona' : 'Datos de Contacto'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           ) : (

@@ -6,7 +6,6 @@ import {
   MessageSquare, 
   Tag, 
   Lock,
-  Truck,
   Sparkles,
   ArrowUpRight,
   ShieldCheck,
@@ -17,6 +16,7 @@ import { COMPANY_INFO } from '../../data/telecomData';
 import { EquipmentItem } from '../../types';
 import { useCatalog } from '../../context/CatalogContext';
 import { FadeInUp } from '../ui/FadeInUp';
+import { BrandLogo } from '../ui/BrandLogo';
 
 interface MaterialSalesSectionProps {
   onOpenQuote: (serviceId?: string) => void;
@@ -34,13 +34,12 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
     { id: 'Panasonic', label: 'Panasonic (Conmutadores & Teléfonos)' },
     { id: 'Grandstream', label: 'Grandstream (IP & PBX)' },
     { id: 'Hikvision', label: 'Hikvision (CCTV & IA)' },
-    { id: 'Ubiquiti', label: 'Ubiquiti (Wi-Fi 6 & UniFi)' },
     { id: 'Dahua', label: 'Dahua (Seguridad)' },
     { id: 'ZKTeco', label: 'ZKTeco (Biometría)' },
   ];
 
   const categoryOptions = [
-    { id: 'todos', label: 'Todos los Artículos' },
+    { id: 'todos', label: 'Todos los Productos' },
     { id: 'panduit-material', label: 'Cables & Conectividad Panduit' },
     { id: 'panasonic-telefonia', label: 'Conmutadores & Teléfonos Panasonic' },
     { id: 'conmutadores', label: 'Conmutadores IP & PBX' },
@@ -48,7 +47,6 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
     { id: 'cctv', label: 'CCTV 4K & Cámaras' },
     { id: 'redes', label: 'Networking & Access Points' },
     { id: 'control-acceso', label: 'Control de Acceso' },
-    { id: 'alarmas', label: 'Sistemas de Alarma' },
   ];
 
   const filteredItems = useMemo(() => {
@@ -69,8 +67,8 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
 
   const handleWhatsAppQuote = (item: EquipmentItem) => {
     const message =
-      `*SOLICITUD DE COTIZACIÓN DE MATERIAL / ARTÍCULO*\n\n` +
-      `📦 *Artículo:* ${item.name}\n` +
+      `*SOLICITUD DE COTIZACIÓN DE PRODUCTO*\n\n` +
+      `📦 *Producto:* ${item.name}\n` +
       `🏷️ *Marca:* ${item.brand}\n` +
       `🔢 *Modelo / SKU:* ${item.model} (${item.sku || 'N/A'})\n` +
       `🔖 *Código SYSCOM:* ${item.syscomCode || 'N/A'}\n` +
@@ -81,7 +79,7 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
   };
 
   return (
-    <section id="materiales" className="py-16 sm:py-24 bg-slate-50/80 dark:bg-[#0d0e11] text-slate-800 dark:text-neutral-200 border-t border-slate-200 dark:border-neutral-800/80 transition-colors duration-300 relative overflow-hidden">
+    <section id="productos" className="py-16 sm:py-24 bg-slate-50/80 dark:bg-[#0d0e11] text-slate-800 dark:text-neutral-200 border-t border-slate-200 dark:border-neutral-800/80 transition-colors duration-300 relative overflow-hidden">
       
       {/* Background Subtle Highlights */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -92,7 +90,7 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
         {/* Header Title */}
         <FadeInUp delay={0} distance={20} className="text-center max-w-3xl mx-auto space-y-3 mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight">
-            Venta de Material <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-cyan-300">Panduit, Panasonic</span> y Marcas Líderes
+            Venta de Productos <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-cyan-300">Panduit, Panasonic</span> y Marcas Líderes
           </h2>
           <p className="text-slate-600 dark:text-neutral-400 text-xs sm:text-base leading-relaxed">
             Suministro de cableado estructurado, jacks, patch cords, conmutadores analógicos/IP, teléfonos propietarios y consumibles con stock en Guadalajara y entregas a toda la República Mexicana.
@@ -125,7 +123,7 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
 
             <div className="flex items-center gap-3 shrink-0 justify-between md:justify-end">
               <span className="text-xs font-bold text-slate-500 dark:text-neutral-400 whitespace-nowrap bg-slate-100 dark:bg-neutral-800/80 px-3 py-2 rounded-xl">
-                {filteredItems.length} artículos en catálogo
+                {filteredItems.length} productos en catálogo
               </span>
 
               {/* Discreet Admin Button */}
@@ -183,15 +181,15 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
         {filteredItems.length === 0 ? (
           <div className="bg-white dark:bg-[#131418] rounded-3xl p-12 text-center border border-slate-200 dark:border-neutral-800 space-y-4">
             <Package className="w-12 h-12 text-slate-400 dark:text-neutral-600 mx-auto" />
-            <h3 className="font-extrabold text-lg text-slate-900 dark:text-white">No encontramos artículos con ese criterio</h3>
+            <h3 className="font-extrabold text-lg text-slate-900 dark:text-white">No encontramos productos con ese criterio</h3>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-neutral-400 max-w-md mx-auto">
-              Como integradores autorizados SYSCOM contamos con más de 15,000 artículos en catálogo. Envíanos tu lista o número de parte por WhatsApp para cotización inmediata.
+              Como integradores autorizados SYSCOM contamos con más de 15,000 productos en catálogo. Envíanos tu lista o número de parte por WhatsApp para cotización inmediata.
             </p>
             <button
               onClick={() => { setSelectedBrand('todos'); setSelectedCategory('todos'); setSearchQuery(''); }}
               className="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-md"
             >
-              Ver todos los artículos
+              Ver todos los productos
             </button>
           </div>
         ) : (
@@ -204,12 +202,18 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
                 <div className="overflow-hidden">
                   {/* Image Container with Badges */}
                   <div className="relative h-44 sm:h-48 rounded-2xl overflow-hidden mb-4 bg-slate-100 dark:bg-[#1c1d23] flex items-center justify-center border border-slate-100 dark:border-neutral-800">
-                    <img
-                      src={item.imageUrl}
-                      alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
+                    {item.imageUrl && !item.imageUrl.includes('images.unsplash.com') ? (
+                      <img
+                        src={item.imageUrl}
+                        alt={item.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-white flex items-center justify-center p-8 group-hover:scale-105 transition-transform duration-500">
+                        <BrandLogo brand={item.brand} className="max-h-20 w-auto max-w-full" textClassName="text-2xl font-black tracking-widest !text-slate-800 text-center" />
+                      </div>
+                    )}
                     
                     {/* Brand Pill */}
                     <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-blue-600/90 backdrop-blur-xs text-white text-[9.5px] font-black tracking-wider uppercase shadow-md max-w-[50%] truncate">
@@ -277,7 +281,7 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
                     className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/20 cursor-pointer text-center"
                   >
                     <MessageSquare className="w-3.5 h-3.5 shrink-0" />
-                    <span>Cotizar Artículo</span>
+                    <span>Cotizar Producto</span>
                   </button>
 
                   <div className="px-2 py-2 rounded-xl bg-slate-100 dark:bg-neutral-800 text-[10px] font-mono font-medium text-slate-600 dark:text-neutral-400 text-center shrink-0 border border-slate-200 dark:border-neutral-700 max-w-[100px] truncate" title={item.warranty}>
@@ -289,34 +293,6 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
             ))}
           </div>
         )}
-
-        {/* Bottom Banner for Custom Volume Requests */}
-        <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-700 to-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold">
-              <Truck className="w-3.5 h-3.5 text-emerald-300" />
-              <span>Suministro a Contratistas, Instaladores & Empresas</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black">
-              ¿Requieres cotización por volumen de material Panduit, Panasonic o SYSCOM?
-            </h3>
-            <p className="text-xs sm:text-sm text-blue-100 max-w-xl">
-              Envíanos tu catálogo de conceptos o lista de números de parte en Excel o PDF. Entregamos cotizaciones con precio preferencial en menos de 2 horas.
-            </p>
-          </div>
-
-          <div className="shrink-0 flex flex-col sm:flex-row gap-3">
-            <a
-              href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Hola,%20tengo%20una%20lista%20de%20materiales/artículos%20por%20volumen%20que%20deseo%20cotizar.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-2xl bg-white text-blue-900 font-extrabold text-xs sm:text-sm shadow-xl hover:bg-blue-50 transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <MessageSquare className="w-4 h-4 text-emerald-600" />
-              <span>Enviar Lista por WhatsApp</span>
-            </a>
-          </div>
-        </div>
 
       </div>
     </section>

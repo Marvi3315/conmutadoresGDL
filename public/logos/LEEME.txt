@@ -1,0 +1,9 @@
+LOGOS DE MARCAS
+Coloca aquí el logo de cada marca (fondo transparente), con el nombre en minúsculas y sin espacios:
+
+panduit.svg   panasonic.svg   grandstream.svg   hikvision.svg   dahua.svg
+cisco.svg     belden.svg      zkteco.svg        honeywell.svg   linkedpro.svg
+commscope.svg ubiquiti.svg
+
+Acepta .svg o .png (se prefiere .svg). Mientras no exista el archivo, la página muestra el nombre de la marca en MAYÚSCULAS.
+Los logos son marcas registradas: descárgalos de la sección de prensa/recursos de cada marca o de tu portal SYSCOM.

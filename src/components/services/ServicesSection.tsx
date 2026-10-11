@@ -6,6 +6,7 @@ import {
   ShieldCheck, 
   BellRing, 
   Wrench, 
+  Wifi, 
   ArrowRight, 
   CheckCircle2, 
   Info,
@@ -35,8 +36,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   const categories = [
     { id: 'todos', label: 'Todos los Servicios' },
     { id: 'telefonia', label: 'Conmutadores & VoIP' },
-    { id: 'seguridad', label: 'CCTV & Alarmas' },
-    { id: 'redes', label: 'Cableado & Fibra' },
+    { id: 'seguridad', label: 'CCTV & Videovigilancia' },
+    { id: 'redes', label: 'Redes, WiFi & Cableado' },
     { id: 'control', label: 'Control de Acceso' },
     { id: 'mantenimiento', label: 'Soporte & Reparación' },
   ];
@@ -53,6 +54,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       case 'ShieldCheck': return ShieldCheck;
       case 'BellRing': return BellRing;
       case 'Wrench': return Wrench;
+      case 'Wifi': return Wifi;
       default: return PhoneCall;
     }
   };

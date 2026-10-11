@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrandLogo } from '../ui/BrandLogo';
 import { 
   ShieldCheck, 
   Truck, 
@@ -28,7 +29,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
       badgeColor: 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800/60'
     },
     { 
-      name: 'Panasonic', 
+      name: 'PANASONIC', 
       category: 'Telefonía Conmutada', 
       role: 'Conmutadores PBX, Tarjetas & Teléfonos Propietarios', 
       accentColor: 'from-blue-500/10 to-indigo-500/5 dark:from-blue-500/20 dark:to-indigo-500/5 border-blue-300 dark:border-blue-500/30 hover:border-blue-500 text-blue-700 dark:text-blue-400',
@@ -56,9 +57,9 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
       badgeColor: 'bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border-sky-300 dark:border-sky-800/60'
     },
     { 
-      name: 'dahua', 
+      name: 'DAHUA', 
       category: 'Seguridad Electrónica', 
-      role: 'CCTV TiOC con disuasión activa, Domos PTZ & Alarmas', 
+      role: 'CCTV TiOC con disuasión activa, Domos PTZ & Videovigilancia', 
       accentColor: 'from-amber-500/10 to-orange-500/5 dark:from-amber-500/20 dark:to-orange-500/5 border-amber-300 dark:border-amber-500/30 hover:border-amber-500 text-amber-700 dark:text-amber-400',
       badgeColor: 'bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border-amber-300 dark:border-amber-800/60'
     },
@@ -84,21 +85,21 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
       badgeColor: 'bg-teal-100 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300 border-teal-300 dark:border-teal-800/60'
     },
     { 
-      name: 'CHAROFIL', 
-      category: 'Canalización Profesional', 
-      role: 'Charola Tipo Malla, Ductos y Accesorios de Fijación', 
-      accentColor: 'from-amber-500/10 to-yellow-500/5 dark:from-amber-500/20 dark:to-yellow-500/5 border-amber-300 dark:border-amber-500/30 hover:border-amber-500 text-amber-700 dark:text-amber-400',
-      badgeColor: 'bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border-amber-300 dark:border-amber-800/60'
+      name: 'LINKEDPRO', 
+      category: 'Cableado & Conectividad', 
+      role: 'Cable UTP, Patch Cords, Jacks y Accesorios de Red', 
+      accentColor: 'from-lime-500/10 to-green-500/5 dark:from-lime-500/20 dark:to-green-500/5 border-lime-300 dark:border-lime-500/30 hover:border-lime-500 text-lime-700 dark:text-lime-400',
+      badgeColor: 'bg-lime-100 dark:bg-lime-950/80 text-lime-800 dark:text-lime-300 border-lime-300 dark:border-lime-800/60'
     },
     { 
-      name: 'Fanvil', 
-      category: 'Telefonía & Intercoms', 
-      role: 'Teléfonos Ejecutivos SIP, Videoporteros IP & Bocinas', 
-      accentColor: 'from-fuchsia-500/10 to-pink-500/5 dark:from-fuchsia-500/20 dark:to-pink-500/5 border-fuchsia-300 dark:border-fuchsia-500/30 hover:border-fuchsia-500 text-fuchsia-700 dark:text-fuchsia-400',
-      badgeColor: 'bg-fuchsia-100 dark:bg-fuchsia-950/80 text-fuchsia-800 dark:text-fuchsia-300 border-fuchsia-300 dark:border-fuchsia-800/60'
+      name: 'COMMSCOPE', 
+      category: 'Infraestructura de Red', 
+      role: 'Cableado Estructurado, Fibra Óptica y Soluciones SYSTIMAX', 
+      accentColor: 'from-orange-500/10 to-red-500/5 dark:from-orange-500/20 dark:to-red-500/5 border-orange-300 dark:border-orange-500/30 hover:border-orange-500 text-orange-700 dark:text-orange-400',
+      badgeColor: 'bg-orange-100 dark:bg-orange-950/80 text-orange-800 dark:text-orange-300 border-orange-300 dark:border-orange-800/60'
     },
     { 
-      name: 'Honeywell', 
+      name: 'HONEYWELL', 
       category: 'Detección & Alarmas', 
       role: 'Sensores Fotoeléctricos, Paneles Vista y Notificadores', 
       accentColor: 'from-red-600/10 to-rose-600/5 dark:from-red-600/20 dark:to-rose-600/5 border-red-300 dark:border-red-600/30 hover:border-red-500 text-red-700 dark:text-red-400',
@@ -164,12 +165,12 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                     rel="noopener noreferrer"
                     className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-blue-600/30 flex items-center gap-2 cursor-pointer"
                   >
-                    <span>Cotizar Lista de Materiales SYSCOM</span>
+                    <span>Cotizar Lista de Productos SYSCOM</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
 
                   <a
-                    href="#materiales"
+                    href="#productos"
                     className="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-neutral-950 dark:hover:bg-neutral-800 border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer"
                   >
                     <span>Ver Catálogo Panduit & Panasonic</span>
@@ -282,7 +283,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                     key={idx}
                     className={`shrink-0 w-64 sm:w-72 p-5 rounded-2xl bg-white dark:bg-neutral-900/90 bg-gradient-to-b ${b.accentColor} border backdrop-blur-md flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-md dark:shadow-lg cursor-pointer group`}
                     onClick={() => {
-                      const el = document.getElementById('materiales');
+                      const el = document.getElementById('productos');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
@@ -294,9 +295,9 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                         <ArrowUpRight className="w-4 h-4 text-slate-400 dark:text-neutral-500 group-hover:text-blue-600 dark:group-hover:text-white transition-colors" />
                       </div>
                       
-                      <h4 className="font-black text-xl tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
-                        {b.name}
-                      </h4>
+                      <div className="h-14 flex items-center justify-center rounded-xl bg-white border border-slate-200 dark:border-white/10 px-3 py-2 mt-1">
+                        <BrandLogo brand={b.name} className="h-9 w-auto max-w-full" textClassName="text-lg font-black tracking-wider !text-slate-800" />
+                      </div>
                     </div>
 
                     <div className="mt-4 pt-3 border-t border-slate-200/80 dark:border-white/10">
@@ -322,7 +323,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                   key={idx}
                   className={`p-5 rounded-2xl bg-white dark:bg-neutral-900/90 bg-gradient-to-b ${b.accentColor} border backdrop-blur-md flex flex-col justify-between transition-all duration-300 hover:scale-[1.03] shadow-md dark:shadow-xl cursor-pointer group`}
                   onClick={() => {
-                    const el = document.getElementById('materiales');
+                    const el = document.getElementById('productos');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
@@ -333,9 +334,9 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                       </span>
                       <ArrowUpRight className="w-4 h-4 text-slate-400 dark:text-neutral-500 group-hover:text-blue-600 dark:group-hover:text-white transition-colors" />
                     </div>
-                    <h4 className="font-black text-lg tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
-                      {b.name}
-                    </h4>
+                    <div className="h-14 flex items-center justify-center rounded-xl bg-white border border-slate-200 dark:border-white/10 px-3 py-2 mt-1">
+                        <BrandLogo brand={b.name} className="h-9 w-auto max-w-full" textClassName="text-lg font-black tracking-wider !text-slate-800" />
+                      </div>
                   </div>
 
                   <div className="mt-3 pt-3 border-t border-slate-200/80 dark:border-white/10">
