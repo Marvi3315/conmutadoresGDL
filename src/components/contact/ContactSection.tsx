@@ -45,8 +45,6 @@ export const ContactSection: React.FC = () => {
     <section id="contacto" className="py-16 sm:py-24 bg-slate-50/80 dark:bg-[#0c0d10] border-t border-slate-200 dark:border-neutral-800/80 relative overflow-hidden text-slate-800 dark:text-neutral-100 transition-colors duration-300">
       
       {/* Ambient background glow */}
-      <div className="absolute top-1/3 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -68,12 +66,12 @@ export const ContactSection: React.FC = () => {
               {/* High-Tech Contact Cards */}
               <div className="space-y-3.5">
                 {/* Lic. Felipe Romo Mobile & WhatsApp Card */}
-                <div className="p-5 rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60 mt-0.5 shrink-0">
+                <div className="p-5 rounded-md bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4 transition-shadow">
+                  <div className="mt-0.5 shrink-0 text-slate-500 dark:text-neutral-400">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[11px] font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                    <div className="text-xs font-semibold text-slate-500 dark:text-neutral-400">
                       Línea Directa & WhatsApp
                     </div>
                     <a 
@@ -91,12 +89,12 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 {/* Office Phone Card */}
-                <div className="p-5 rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/60 mt-0.5 shrink-0">
+                <div className="p-5 rounded-md bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4 transition-shadow">
+                  <div className="mt-0.5 shrink-0 text-slate-500 dark:text-neutral-400">
                     <PhoneCall className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[11px] font-mono font-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
+                    <div className="text-xs font-semibold text-slate-500 dark:text-neutral-400">
                       Teléfono Fijo de Oficina
                     </div>
                     <a 
@@ -112,12 +110,12 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 {/* Email Contact Card */}
-                <div className="p-5 rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="p-3 rounded-2xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/60 mt-0.5 shrink-0">
+                <div className="p-5 rounded-md bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4 transition-shadow">
+                  <div className="mt-0.5 shrink-0 text-slate-500 dark:text-neutral-400">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[11px] font-mono font-bold text-indigo-700 dark:text-indigo-400 uppercase tracking-wider">
+                    <div className="text-xs font-semibold text-slate-500 dark:text-neutral-400">
                       Correo Electrónico
                     </div>
                     <a 
@@ -133,12 +131,12 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 {/* Business Hours Card */}
-                <div className="p-5 rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4 shadow-sm">
-                  <div className="p-3 rounded-2xl bg-slate-100 dark:bg-neutral-800 text-slate-700 dark:text-neutral-300 border border-slate-200 dark:border-neutral-700 mt-0.5 shrink-0">
+                <div className="p-5 rounded-md bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 flex items-start gap-4">
+                  <div className="mt-0.5 shrink-0 text-slate-500 dark:text-neutral-400">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[11px] font-mono font-bold text-slate-500 dark:text-neutral-400 uppercase tracking-wider mb-1.5">
+                    <div className="text-xs font-semibold text-slate-500 dark:text-neutral-400 mb-1.5">
                       Horarios de Atención
                     </div>
                     <div className="space-y-1 text-xs text-slate-700 dark:text-neutral-300">
@@ -163,7 +161,7 @@ export const ContactSection: React.FC = () => {
 
           {/* Right: Site Survey Booking Form (7 cols) */}
           <FadeInUp delay={120} distance={24} className="lg:col-span-7">
-            <div className="p-6 sm:p-9 rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 shadow-xl relative overflow-hidden">
+            <div className="p-6 sm:p-9 rounded-md bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 relative overflow-hidden">
               
               <div className="pb-5 mb-6 border-b border-slate-100 dark:border-neutral-800/80">
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white tracking-tight">
@@ -175,7 +173,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {isSurveyBooked ? (
-                <div className="p-8 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-center space-y-3">
+                <div className="p-8 rounded-md bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-center space-y-3">
                   <CheckCircle2 className="w-12 h-12 text-emerald-600 dark:text-emerald-400 mx-auto" />
                   <h4 className="font-bold text-slate-950 dark:text-white text-lg">¡Solicitud de Visita Técnica Registrada!</h4>
                   <p className="text-xs text-emerald-800 dark:text-emerald-300 leading-relaxed max-w-md mx-auto">
@@ -184,7 +182,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setIsSurveyBooked(false)}
-                    className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-neutral-800 text-xs font-bold text-slate-700 dark:text-neutral-200 hover:bg-slate-200 dark:hover:bg-neutral-700"
+                    className="px-5 py-2.5 rounded-md bg-slate-100 dark:bg-neutral-800 text-xs font-bold text-slate-700 dark:text-neutral-200 hover:bg-slate-200 dark:hover:bg-neutral-700"
                   >
                     Agendar otra cita
                   </button>
@@ -201,7 +199,7 @@ export const ContactSection: React.FC = () => {
                         placeholder="Ej. Ing. Carlos Mendoza"
                         value={surveyName}
                         onChange={(e) => setSurveyName(e.target.value)}
-                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-2xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
+                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
                       />
                     </div>
                     <div>
@@ -212,7 +210,7 @@ export const ContactSection: React.FC = () => {
                         placeholder="Ej. 33 3812 5590"
                         value={surveyPhone}
                         onChange={(e) => setSurveyPhone(e.target.value)}
-                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-2xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
+                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
                       />
                     </div>
                   </div>
@@ -225,7 +223,7 @@ export const ContactSection: React.FC = () => {
                         placeholder="Ej. Grupo Industrial Jalisco"
                         value={surveyCompany}
                         onChange={(e) => setSurveyCompany(e.target.value)}
-                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-2xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
+                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
                       />
                     </div>
                     <div>
@@ -233,7 +231,7 @@ export const ContactSection: React.FC = () => {
                       <select
                         value={surveyZone}
                         onChange={(e) => setSurveyZone(e.target.value)}
-                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-2xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
+                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
                       >
                         {COVERAGE_ZONES.map((z, idx) => (
                           <option key={idx} value={z.name}>{z.name}</option>
@@ -248,7 +246,7 @@ export const ContactSection: React.FC = () => {
                       <select
                         value={surveyService}
                         onChange={(e) => setSurveyService(e.target.value)}
-                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-2xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
+                        className="w-full px-4 py-3 text-xs sm:text-sm rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition-colors"
                       >
                         <option value="Conmutadores Telefónicos IP">Conmutadores Telefónicos & Telefonía IP</option>
                         <option value="CCTV & Cámaras de Seguridad 4K">CCTV & Cámaras de Seguridad 4K</option>
@@ -267,13 +265,13 @@ export const ContactSection: React.FC = () => {
                       placeholder="Ej. Requerimos migrar 20 extensiones a IP y cotizar 8 cámaras 4K para bodega..."
                       value={surveyNotes}
                       onChange={(e) => setSurveyNotes(e.target.value)}
-                      className="w-full px-4 py-2.5 text-xs sm:text-sm rounded-2xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 resize-none transition-colors"
+                      className="w-full px-4 py-2.5 text-xs sm:text-sm rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 resize-none transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-black text-xs sm:text-sm shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                    className="w-full py-4 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
                   >
                     <Calendar className="w-4 h-4" />
                     <span>Confirmar y Agendar Visita por WhatsApp</span>

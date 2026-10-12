@@ -107,13 +107,13 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden my-4 sm:my-8 max-h-[92vh] flex flex-col text-slate-800 dark:text-slate-100 transition-colors">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-md overflow-hidden my-4 sm:my-8 max-h-[92vh] flex flex-col text-slate-800 dark:text-slate-100 transition-colors">
         
         {/* Header Bar */}
         <div className="relative p-5 sm:p-6 bg-blue-600 dark:bg-blue-700 text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-blue-700 dark:bg-blue-800 text-white border border-blue-500">
+            <div className="p-2.5 rounded-md bg-blue-700 dark:bg-blue-800 text-white border border-blue-500">
               <Calculator className="w-6 h-6" />
             </div>
             <div>
@@ -127,7 +127,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-xl bg-blue-700/60 hover:bg-blue-800 text-blue-100 hover:text-white transition-colors cursor-pointer"
+            className="p-2 rounded-md bg-blue-700/60 hover:bg-blue-800 text-blue-100 hover:text-white transition-colors cursor-pointer"
             aria-label="Cerrar cotizador"
           >
             <X className="w-5 h-5" />
@@ -199,9 +199,9 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                         key={srv.id}
                         type="button"
                         onClick={() => setServiceType(srv.id)}
-                        className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
+                        className={`p-3.5 rounded-md border text-left transition-all cursor-pointer ${
                           serviceType === srv.id
-                            ? 'bg-blue-50 dark:bg-blue-950/60 border-blue-600 dark:border-blue-500 text-blue-950 dark:text-blue-300 font-bold shadow-xs ring-1 ring-blue-600'
+                            ? 'bg-blue-50 dark:bg-blue-950/60 border-blue-600 dark:border-blue-500 text-blue-950 dark:text-blue-300 font-bold ring-1 ring-blue-600'
                             : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700'
                         }`}
                       >
@@ -217,7 +217,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
               </div>
 
               {/* Units Slider */}
-              <div className="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
+              <div className="p-5 rounded-md bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
                 <div className="flex items-center justify-between text-sm font-bold">
                   <span className="text-slate-800 dark:text-slate-200">
                     {serviceType === 'conmutadores-ip' ? 'Número de Extensiones / Teléfonos requeridos:' :
@@ -237,7 +237,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                   step="2"
                   value={unitsCount}
                   onChange={(e) => setUnitsCount(Number(e.target.value))}
-                  className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded appearance-none cursor-pointer accent-blue-600"
                 />
 
                 <div className="flex justify-between text-[11px] text-slate-400 font-mono">
@@ -263,7 +263,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                       key={t.id}
                       type="button"
                       onClick={() => setInstallType(t.id as any)}
-                      className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
+                      className={`p-3 rounded-md border text-center transition-all cursor-pointer ${
                         installType === t.id
                           ? 'bg-blue-50 dark:bg-blue-950/60 border-blue-600 dark:border-blue-500 text-blue-900 dark:text-blue-300 font-bold'
                           : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-slate-300'
@@ -286,7 +286,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                   Complementos Recomendados para tu Infraestructura:
                 </label>
                 <div className="space-y-2.5">
-                  <label className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                  <label className="flex items-center justify-between p-3.5 rounded-md bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
                     <div className="space-y-0.5">
                       <div className="text-sm font-bold text-slate-900 dark:text-white">Sistema de Respaldo Eléctrico UPS No-Break</div>
                       <div className="text-xs text-slate-500 dark:text-slate-400">Garantiza operación continua ante apagones y fluctuaciones de CFE.</div>
@@ -301,7 +301,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
 
                   {serviceType === 'conmutadores-ip' && (
                     <>
-                      <label className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                      <label className="flex items-center justify-between p-3.5 rounded-md bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
                         <div className="space-y-0.5">
                           <div className="text-sm font-bold text-slate-900 dark:text-white">Grabación de Llamadas de Entrada y Salida</div>
                           <div className="text-xs text-slate-500 dark:text-slate-400">Auditoría de calidad para ventas, atención al cliente y soporte.</div>
@@ -314,7 +314,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                         />
                       </label>
 
-                      <label className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                      <label className="flex items-center justify-between p-3.5 rounded-md bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
                         <div className="space-y-0.5">
                           <div className="text-sm font-bold text-slate-900 dark:text-white">App Móvil para Smartphone (Home Office)</div>
                           <div className="text-xs text-slate-500 dark:text-slate-400">Contesta y transfiere llamadas de la oficina en tu celular iOS o Android.</div>
@@ -330,7 +330,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                   )}
 
                   {serviceType === 'cableado-redes-fibra' && (
-                    <label className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                    <label className="flex items-center justify-between p-3.5 rounded-md bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
                       <div className="space-y-0.5">
                         <div className="text-sm font-bold text-slate-900 dark:text-white">Certificación Fluke Networks nodo por nodo</div>
                         <div className="text-xs text-slate-500 dark:text-slate-400">Entrega de gráfica de reflectometría y garantía de 15 años de enlace.</div>
@@ -354,7 +354,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                 <select
                   value={selectedZone}
                   onChange={(e) => setSelectedZone(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-600"
+                  className="w-full px-4 py-2.5 rounded-md bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-600"
                 >
                   {COVERAGE_ZONES.map((zone, idx) => (
                     <option key={idx} value={zone.name}>
@@ -372,7 +372,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
             <div className="space-y-6 animate-in fade-in duration-200">
               
               {/* Request summary (sin precios) */}
-              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
+              <div className="p-5 rounded-md bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-3">
                 <h3 className="font-bold text-slate-900 dark:text-white text-sm pb-3 border-b border-slate-200 dark:border-slate-700">Resumen de tu solicitud</h3>
                 <div className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
                   {[
@@ -393,7 +393,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
               </div>
 
               {/* Client Details Form */}
-              <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+              <div className="p-5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                   <span>Tus datos de contacto</span>
@@ -407,7 +407,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                       placeholder="Ej. Ing. Carlos Mendoza"
                       value={clientName}
                       onChange={(e) => setClientName(e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
+                      className="w-full px-3 py-2 text-xs rounded-md bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
                     />
                   </div>
                   <div>
@@ -417,7 +417,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                       placeholder="Ej. 33 3812 5590"
                       value={clientPhone}
                       onChange={(e) => setClientPhone(e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
+                      className="w-full px-3 py-2 text-xs rounded-md bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
                     />
                   </div>
                   <div>
@@ -427,7 +427,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                       placeholder="Ej. Corporativo Arcos"
                       value={clientCompany}
                       onChange={(e) => setClientCompany(e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
+                      className="w-full px-3 py-2 text-xs rounded-md bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
                     />
                   </div>
                   <div>
@@ -437,7 +437,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                       placeholder="contacto@miempresa.com"
                       value={clientEmail}
                       onChange={(e) => setClientEmail(e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
+                      className="w-full px-3 py-2 text-xs rounded-md bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
                     />
                   </div>
                 </div>
@@ -446,7 +446,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                   <button
                     type="button"
                     onClick={handleSendToWhatsApp}
-                    className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="flex-1 py-3 px-4 rounded-md bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Enviar solicitud por WhatsApp</span>
@@ -454,7 +454,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                   <button
                     type="button"
                     onClick={() => window.print()}
-                    className="py-3 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer shrink-0"
+                    className="py-3 px-4 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs transition-colors flex items-center justify-center gap-2 cursor-pointer shrink-0"
                   >
                     <Printer className="w-4 h-4 text-slate-500" />
                     <span>Imprimir</span>
@@ -473,7 +473,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
             <button
               type="button"
               onClick={() => setStep(step - 1)}
-              className="px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-2 transition-colors cursor-pointer"
+              className="px-4 py-2.5 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-2 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Anterior</span>
@@ -484,7 +484,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
             <button
               type="button"
               onClick={() => setStep(step + 1)}
-              className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-2 shadow-sm transition-all cursor-pointer"
+              className="px-6 py-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>Siguiente: {step === 1 ? 'Complementos y Zona' : 'Datos de Contacto'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -493,7 +493,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors cursor-pointer"
+              className="px-4 py-2.5 rounded-md bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors cursor-pointer"
             >
               Cerrar
             </button>

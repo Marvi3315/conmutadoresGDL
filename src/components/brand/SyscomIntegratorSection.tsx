@@ -45,22 +45,22 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
       name: 'PANDUIT', 
       category: 'Cableado Estructurado', 
       role: 'Cat6/6A, Jacks, Patch Panels & Canalización', 
-      accentColor: 'from-emerald-500/10 to-teal-500/5 dark:from-emerald-500/20 dark:to-teal-500/5 border-emerald-300 dark:border-emerald-500/30 hover:border-emerald-500 text-emerald-700 dark:text-emerald-400',
+      accentColor: 'from-emerald-500/10 to-blue-500/5 dark:from-emerald-500/20 dark:to-blue-500/5 border-emerald-300 dark:border-emerald-500/30 hover:border-emerald-500 text-emerald-700 dark:text-emerald-400',
       badgeColor: 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800/60'
     },
     { 
       name: 'PANASONIC', 
       category: 'Telefonía Conmutada', 
       role: 'Conmutadores PBX, Tarjetas & Teléfonos Propietarios', 
-      accentColor: 'from-blue-500/10 to-indigo-500/5 dark:from-blue-500/20 dark:to-indigo-500/5 border-blue-300 dark:border-blue-500/30 hover:border-blue-500 text-blue-700 dark:text-blue-400',
+      accentColor: 'from-blue-500/10 to-blue-500/5 dark:from-blue-500/20 dark:to-blue-500/5 border-blue-300 dark:border-blue-500/30 hover:border-blue-500 text-blue-700 dark:text-blue-400',
       badgeColor: 'bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border-blue-300 dark:border-blue-800/60'
     },
     { 
       name: 'GRANDSTREAM', 
       category: 'VoIP & Comunicaciones', 
       role: 'Conmutadores IP UCM, Teléfonos SIP & Gateways', 
-      accentColor: 'from-cyan-500/10 to-blue-500/5 dark:from-cyan-500/20 dark:to-blue-500/5 border-cyan-300 dark:border-cyan-500/30 hover:border-cyan-500 text-cyan-700 dark:text-cyan-400',
-      badgeColor: 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-800 dark:text-cyan-300 border-cyan-300 dark:border-cyan-800/60'
+      accentColor: 'from-blue-500/10 to-blue-500/5 dark:from-blue-500/20 dark:to-blue-500/5 border-blue-300 dark:border-blue-500/30 hover:border-blue-500 text-blue-700 dark:text-blue-400',
+      badgeColor: 'bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border-blue-300 dark:border-blue-800/60'
     },
     { 
       name: 'HIKVISION', 
@@ -73,8 +73,8 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
       name: 'UBIQUITI', 
       category: 'Redes UniFi & Enlaces', 
       role: 'Access Points Wi-Fi 6, Gateways Dream Machine & Switches', 
-      accentColor: 'from-sky-500/10 to-cyan-500/5 dark:from-sky-500/20 dark:to-cyan-500/5 border-sky-300 dark:border-sky-500/30 hover:border-sky-500 text-sky-700 dark:text-sky-400',
-      badgeColor: 'bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border-sky-300 dark:border-sky-800/60'
+      accentColor: 'from-blue-500/10 to-blue-500/5 dark:from-blue-500/20 dark:to-blue-500/5 border-blue-300 dark:border-blue-500/30 hover:border-blue-500 text-blue-700 dark:text-blue-400',
+      badgeColor: 'bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border-blue-300 dark:border-blue-800/60'
     },
     { 
       name: 'DAHUA', 
@@ -87,22 +87,22 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
       name: 'CISCO', 
       category: 'Networking Empresarial', 
       role: 'Switches Catalyst, Routers & Seguridad de Red', 
-      accentColor: 'from-blue-600/10 to-indigo-600/5 dark:from-blue-600/20 dark:to-indigo-600/5 border-blue-300 dark:border-blue-600/30 hover:border-blue-500 text-blue-700 dark:text-blue-300',
+      accentColor: 'from-blue-600/10 to-blue-600/5 dark:from-blue-600/20 dark:to-blue-600/5 border-blue-300 dark:border-blue-600/30 hover:border-blue-500 text-blue-700 dark:text-blue-300',
       badgeColor: 'bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border-blue-300 dark:border-blue-800/60'
     },
     { 
       name: 'BELDEN', 
       category: 'Cables de Alta Gama', 
       role: 'Cableado Industrial, Audio/Video y Fibra Óptica', 
-      accentColor: 'from-violet-500/10 to-purple-500/5 dark:from-violet-500/20 dark:to-purple-500/5 border-violet-300 dark:border-violet-500/30 hover:border-violet-500 text-violet-700 dark:text-violet-400',
-      badgeColor: 'bg-violet-100 dark:bg-violet-950/80 text-violet-800 dark:text-violet-300 border-violet-300 dark:border-violet-800/60'
+      accentColor: 'from-blue-500/10 to-blue-500/5 dark:from-blue-500/20 dark:to-blue-500/5 border-blue-300 dark:border-blue-500/30 hover:border-blue-500 text-blue-700 dark:text-blue-400',
+      badgeColor: 'bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border-blue-300 dark:border-blue-800/60'
     },
     { 
       name: 'ZKTECO', 
       category: 'Biometría & Control', 
       role: 'Reconocimiento Facial, Huella Digital y Chapas Magnéticas', 
-      accentColor: 'from-teal-500/10 to-emerald-500/5 dark:from-teal-500/20 dark:to-emerald-500/5 border-teal-300 dark:border-teal-500/30 hover:border-teal-500 text-teal-700 dark:text-teal-400',
-      badgeColor: 'bg-teal-100 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300 border-teal-300 dark:border-teal-800/60'
+      accentColor: 'from-blue-500/10 to-emerald-500/5 dark:from-blue-500/20 dark:to-emerald-500/5 border-blue-300 dark:border-blue-500/30 hover:border-blue-500 text-blue-700 dark:text-blue-400',
+      badgeColor: 'bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border-blue-300 dark:border-blue-800/60'
     },
     { 
       name: 'LINKEDPRO', 
@@ -146,7 +146,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                 </span>
               </div>
               
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-neutral-300 bg-slate-50 dark:bg-neutral-950/80 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-neutral-800">
+               <div className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-neutral-400">
                 <Truck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Envíos directos a toda la República Mexicana</span>
               </div>
@@ -182,7 +182,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                     href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Hola%20Licenciado%20Felipe%20Romo,%20solicito%20cotización%20de%20material/equipo%20de%20catálogo%20SYSCOM.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-blue-600/30 flex items-center gap-2 cursor-pointer"
+                    className="px-6 py-3.5 rounded-md bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer"
                   >
                     <span>Cotizar Lista de Productos SYSCOM</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -190,7 +190,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
 
                   <a
                     href="#productos"
-                    className="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-neutral-950 dark:hover:bg-neutral-800 border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer"
+                    className="px-5 py-3.5 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-neutral-950 dark:hover:bg-neutral-800 border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer"
                   >
                     <span>Ver Catálogo Panduit & Panasonic</span>
                   </a>
@@ -199,50 +199,26 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
 
               {/* Right Column: High-Tech Card with stats */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl bg-slate-50 dark:bg-neutral-950/90 border border-slate-200 dark:border-neutral-800 p-5 sm:p-6 space-y-4 shadow-md dark:shadow-xl">
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-neutral-800">
-                    <div className="flex items-center gap-2">
-                      <Boxes className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                      <span className="font-bold text-sm text-slate-900 dark:text-white">Beneficios con Integrador</span>
-                    </div>
-                    <span className="text-[10px] uppercase font-black text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800/60">
-                      Garantizado
-                    </span>
+                <div className="border border-slate-300 dark:border-neutral-700 rounded-md">
+                  <div className="px-5 py-3 border-b border-slate-300 dark:border-neutral-700 font-bold text-sm text-slate-900 dark:text-white">
+                    Beneficios con integrador
                   </div>
-
-                  <div className="space-y-3 text-xs">
-                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-neutral-900/90 border border-slate-200 dark:border-neutral-800/80 hover:border-blue-400 dark:hover:border-neutral-700 transition-colors shadow-xs">
-                      <div className="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/40 shrink-0">
-                        <ShieldCheck className="w-4 h-4" />
+                  <dl className="divide-y divide-slate-200 dark:divide-neutral-800 text-sm">
+                    {[
+                      ['01', 'Garantía directa nacional', 'Soporte directo de fábrica, refacciones originales y reposición expedita.'],
+                      ['02', 'Almacenes en todo México', 'Stock local en Guadalajara y CEDIS en CDMX, Monterrey, Chihuahua y Mérida.'],
+                      ['03', 'Asesoría de ingeniería', 'Validación de compatibilidad de tarjetas, módulos, fuentes y especificaciones.'],
+                    ].map(([n, t, d]) => (
+                      <div key={n} className="flex gap-4 px-5 py-4">
+                        <dt className="font-mono text-[11px] tabular-nums text-slate-400 dark:text-neutral-500 pt-0.5">{n}</dt>
+                        <dd>
+                          <div className="font-semibold text-slate-900 dark:text-white">{t}</div>
+                          <div className="mt-0.5 text-xs text-slate-600 dark:text-neutral-400 leading-relaxed">{d}</div>
+                        </dd>
                       </div>
-                      <div>
-                        <div className="font-bold text-slate-900 dark:text-white text-xs">Garantía Directa Nacional</div>
-                        <div className="text-slate-600 dark:text-neutral-400 text-[11px] mt-0.5">Soporte directo de fábrica, refacciones 100% originales y reposición expedita.</div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-neutral-900/90 border border-slate-200 dark:border-neutral-800/80 hover:border-blue-400 dark:hover:border-neutral-700 transition-colors shadow-xs">
-                      <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/40 shrink-0">
-                        <Truck className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 dark:text-white text-xs">Almacenes en Todo México</div>
-                        <div className="text-slate-600 dark:text-neutral-400 text-[11px] mt-0.5">Stock local en Guadalajara y CEDIS en CDMX, Monterrey, Chihuahua y Mérida.</div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-neutral-900/90 border border-slate-200 dark:border-neutral-800/80 hover:border-blue-400 dark:hover:border-neutral-700 transition-colors shadow-xs">
-                      <div className="p-2 rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-800/40 shrink-0">
-                        <Headphones className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 dark:text-white text-xs">Asesoría de Ingeniería Certificada</div>
-                        <div className="text-slate-600 dark:text-neutral-400 text-[11px] mt-0.5">Validación de compatibilidad de tarjetas, módulos, fuentes y especificaciones.</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-2 text-center text-[11px] text-slate-500 dark:text-neutral-500 border-t border-slate-200 dark:border-neutral-800/60">
+                    ))}
+                  </dl>
+                  <div className="px-5 py-3 border-t border-slate-300 dark:border-neutral-700 text-xs text-slate-500 dark:text-neutral-500">
                     {SYSCOM_PARTNER_INFO.warehouseCoverage}
                   </div>
                 </div>
@@ -269,7 +245,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
               <button
                 type="button"
                 onClick={() => setViewMode(viewMode === 'carousel' ? 'grid' : 'carousel')}
-                className="px-4 py-2.5 rounded-xl bg-white dark:bg-neutral-900 hover:bg-slate-50 dark:hover:bg-neutral-800 border border-slate-200 dark:border-neutral-700 text-xs font-bold text-slate-800 dark:text-neutral-200 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+                className="px-4 py-2.5 rounded-md bg-white dark:bg-neutral-900 hover:bg-slate-50 dark:hover:bg-neutral-800 border border-slate-200 dark:border-neutral-700 text-xs font-bold text-slate-800 dark:text-neutral-200 transition-all flex items-center gap-2 cursor-pointer"
                 title={viewMode === 'carousel' ? 'Cambiar a vista de cuadrícula' : 'Cambiar a carrusel continuo'}
               >
                 {viewMode === 'carousel' ? (

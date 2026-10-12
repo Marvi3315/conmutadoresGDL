@@ -70,13 +70,13 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden my-8 max-h-[90vh] flex flex-col text-slate-800 dark:text-slate-100">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-md overflow-hidden my-8 max-h-[90vh] flex flex-col text-slate-800 dark:text-slate-100">
         
         {/* Header Bar */}
         <div className="relative p-6 sm:p-8 bg-blue-600 dark:bg-blue-700 text-white border-b border-blue-700 flex items-start justify-between">
           <div className="flex items-center gap-4">
-            <div className="p-3 rounded-xl bg-blue-700 dark:bg-blue-800 text-white border border-blue-500">
+            <div className="p-3 rounded-md bg-blue-700 dark:bg-blue-800 text-white border border-blue-500">
               <IconComp className="w-8 h-8" />
             </div>
             <div>
@@ -92,7 +92,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-blue-800/60 hover:bg-blue-800 text-blue-100 hover:text-white transition-colors cursor-pointer"
+            className="p-2 rounded-md bg-blue-800/60 hover:bg-blue-800 text-blue-100 hover:text-white transition-colors cursor-pointer"
             aria-label="Cerrar modal"
           >
             <X className="w-5 h-5" />
@@ -112,7 +112,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
           {/* Key Deliverables & Features */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div className="p-5 rounded-md bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-3">
               <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400 font-bold text-sm">
                 <Layers className="w-4 h-4" />
                 <span>Alcance y Entregables del Proyecto</span>
@@ -127,7 +127,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
               </ul>
             </div>
 
-            <div className="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div className="p-5 rounded-md bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-3">
               <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400 font-bold text-sm">
                 <Award className="w-4 h-4" />
                 <span>Marcas y Equipos Certificados</span>
@@ -150,7 +150,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           </div>
 
           {/* Quick Direct Quote Form */}
-          <div className="p-6 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 space-y-4">
+          <div className="p-6 rounded-md bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <h4 className="text-base font-bold text-slate-900 dark:text-white">
@@ -166,7 +166,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
                   onClose();
                   onOpenCalculatorWithService(service.id);
                 }}
-                className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-blue-300 dark:border-blue-700 text-xs font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-50"
+                className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded bg-white dark:bg-slate-900 border border-blue-300 dark:border-blue-700 text-xs font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-50"
               >
                 <span>Solicitar Cotización</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -174,7 +174,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
             </div>
 
             {isSubmitted ? (
-              <div className="p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold text-center">
+              <div className="p-4 rounded bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold text-center">
                 ¡Mensaje preparado! Te hemos redirigido a WhatsApp con Felipe Romo para atender tu solicitud.
               </div>
             ) : (
@@ -186,7 +186,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
                     placeholder="Tu Nombre *"
                     value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
-                    className="w-full px-3 py-2 text-xs rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
+                    className="w-full px-3 py-2 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
                   />
                 </div>
                 <div>
@@ -196,7 +196,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
                     placeholder="Teléfono / WhatsApp *"
                     value={clientPhone}
                     onChange={(e) => setClientPhone(e.target.value)}
-                    className="w-full px-3 py-2 text-xs rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
+                    className="w-full px-3 py-2 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
                   />
                 </div>
                 <div>
@@ -205,7 +205,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
                     placeholder="Empresa (Opcional)"
                     value={clientCompany}
                     onChange={(e) => setClientCompany(e.target.value)}
-                    className="w-full px-3 py-2 text-xs rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
+                    className="w-full px-3 py-2 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600"
                   />
                 </div>
                 <div className="sm:col-span-3">
@@ -214,13 +214,13 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
                     placeholder="Detalles de tu proyecto (número de extensiones, cámaras, puntos de red o ubicación)..."
                     value={clientNotes}
                     onChange={(e) => setClientNotes(e.target.value)}
-                    className="w-full px-3 py-2 text-xs rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 resize-none"
+                    className="w-full px-3 py-2 text-xs rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:border-blue-600 resize-none"
                   />
                 </div>
                 <div className="sm:col-span-3">
                   <button
                     type="submit"
-                    className="w-full py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-2.5 rounded bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Enviar Solicitud Inmediata por WhatsApp</span>
@@ -241,7 +241,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer"
+              className="px-4 py-2 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer"
             >
               Cerrar
             </button>
@@ -249,7 +249,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
               href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Hola%20Felipe%20Romo,%20me%20gustaría%20cotizar%20el%20servicio%20de%20${encodeURIComponent(service.title)}.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold flex items-center gap-1.5 shadow-sm"
+              className="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold flex items-center gap-1.5"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>Chatear por WhatsApp</span>

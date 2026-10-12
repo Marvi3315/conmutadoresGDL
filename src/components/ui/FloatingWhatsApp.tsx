@@ -26,7 +26,7 @@ export const FloatingWhatsApp: React.FC = () => {
       desc: 'Videovigilancia con IA y visión nocturna',
       text: 'Hola, solicito información y cotización de cámaras de seguridad CCTV.',
       icon: Camera,
-      color: 'text-cyan-600 dark:text-cyan-400',
+      color: 'text-blue-600 dark:text-blue-400',
     },
     {
       title: 'Agendar Visita en GDL (Gratis)',
@@ -54,7 +54,7 @@ export const FloatingWhatsApp: React.FC = () => {
       
       {/* Interactive Quick Action Popup */}
       {isOpen && (
-        <div className="mb-3 w-80 sm:w-96 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-5 space-y-4 animate-in slide-in-from-bottom-5 duration-300 text-slate-800 dark:text-slate-100">
+        <div className="mb-3 w-80 sm:w-96 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-4 animate-in slide-in-from-bottom-5 duration-300 text-slate-800 dark:text-slate-100">
           
           {/* Header inside Widget */}
           <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
@@ -73,7 +73,7 @@ export const FloatingWhatsApp: React.FC = () => {
 
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="p-1.5 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -91,10 +91,10 @@ export const FloatingWhatsApp: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => handleOpenAction(action.text)}
-                  className="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50/50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left flex items-center justify-between gap-3 transition-all cursor-pointer group"
+                  className="w-full p-2.5 rounded-md bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50/50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left flex items-center justify-between gap-3 transition-all cursor-pointer group"
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <div className="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-blue-600 dark:text-blue-400 group-hover:scale-105 transition-transform shrink-0">
+                    <div className="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-blue-600 dark:text-blue-400 group-hover:scale-105 transition-transform shrink-0">
                       <Icon className="w-4 h-4" />
                     </div>
                     <div className="truncate">
@@ -127,7 +127,7 @@ export const FloatingWhatsApp: React.FC = () => {
       {/* Floating Main Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative group flex items-center gap-3 px-4 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer border border-emerald-500"
+        className="relative group flex items-center gap-3 px-4 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-all duration-300 cursor-pointer border border-emerald-500"
         aria-label="Abrir WhatsApp"
       >
         <span className="relative flex h-2.5 w-2.5">

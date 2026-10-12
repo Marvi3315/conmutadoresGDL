@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top CTA Card inside footer */}
-        <div className="mb-16 p-8 md:p-10 rounded-xl bg-blue-700 text-white shadow-xl relative overflow-hidden border border-blue-600">
+        <div className="mb-16 p-8 md:p-10 rounded-md bg-slate-950 text-white relative overflow-hidden border border-slate-700">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
             <div className="max-w-2xl text-center lg:text-left space-y-2">
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
             <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
               <button
                 onClick={onOpenCalculator}
-                className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white text-blue-900 hover:bg-slate-100 font-bold text-sm shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 rounded bg-white text-blue-900 hover:bg-slate-100 font-bold text-sm transition-all cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>Cotizar en Línea Ahora</span>
                 <ChevronRight className="w-4 h-4" />
@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
                 href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Hola%20Licenciado%20Felipe%20Romo,%20deseo%20cotizar%20material%20o%20servicio%20para%20mi%20empresa.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-all flex items-center justify-center gap-2"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Agendar por WhatsApp</span>
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
           {/* Col 1: Brand & Identity (spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-5">
             <a href="#" className="flex items-center gap-3 group">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-black border border-slate-700 shadow-sm overflow-hidden p-0.5">
+              <div className="flex items-center justify-center w-10 h-10 rounded-md bg-black border border-slate-700 overflow-hidden p-0.5">
                 <PhoneHandsetLogo className="w-full h-full" />
               </div>
               <div className="flex flex-col">
@@ -97,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
             </div>
 
             {/* Emergency Hotline Box */}
-            <div className="p-3.5 rounded-lg bg-slate-800 border border-slate-700 flex items-center gap-3">
+            <div className="p-3.5 rounded bg-slate-800 border border-slate-700 flex items-center gap-3">
               <div className="p-2 rounded-md bg-red-500/20 text-red-400">
                 <Headphones className="w-5 h-5" />
               </div>

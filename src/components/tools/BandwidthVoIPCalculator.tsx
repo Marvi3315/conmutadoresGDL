@@ -47,7 +47,6 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
     <section id="calculadora-red" className="py-16 sm:py-24 bg-slate-50/70 dark:bg-[#0c0d10] border-t border-slate-200 dark:border-neutral-800/80 transition-colors duration-300 relative overflow-hidden">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -55,7 +54,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
         <FadeInUp delay={0} distance={20}>
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight">
-              Calculadora de Almacenamiento <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">CCTV 4K</span>
+              Calculadora de Almacenamiento <span className="text-blue-600 dark:text-blue-400 ">CCTV 4K</span>
             </h2>
             <p className="text-slate-600 dark:text-neutral-400 text-xs sm:text-base leading-relaxed">
               Estima con precisión técnica cuántos Terabytes (TB) y qué discos duros especializados requieres para tu grabador NVR/DVR según el número de cámaras y días de respaldo.
@@ -68,7 +67,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch max-w-5xl mx-auto">
           
           {/* Left Inputs (7 cols) */}
-          <div className="lg:col-span-7 p-6 sm:p-9 rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 space-y-6 shadow-xl">
+          <div className="lg:col-span-7 p-6 sm:p-9 rounded-md bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 space-y-6">
             
             <div className="flex items-center justify-between pb-3.5 border-b border-slate-100 dark:border-neutral-800/80">
               <span className="text-xs font-bold text-slate-500 dark:text-neutral-400 uppercase tracking-wider">Parámetros de Grabación</span>
@@ -90,7 +89,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                 step="2"
                 value={cctvCameras}
                 onChange={(e) => setCctvCameras(Number(e.target.value))}
-                className="w-full h-2 bg-slate-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                className="w-full h-2 bg-slate-200 dark:bg-neutral-700 rounded appearance-none cursor-pointer accent-blue-600"
               />
               <div className="flex justify-between text-[11px] text-slate-400 dark:text-neutral-500 font-mono">
                 <span>2</span>
@@ -113,9 +112,9 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                     key={r.id}
                     type="button"
                     onClick={() => setResolution(r.id as any)}
-                    className={`p-3.5 rounded-2xl border text-center transition-all cursor-pointer ${
+                    className={`p-3.5 rounded-md border text-center transition-all cursor-pointer ${
                       resolution === r.id
-                        ? 'bg-blue-50 dark:bg-blue-950/80 border-blue-600 text-blue-950 dark:text-blue-200 font-bold shadow-sm ring-2 ring-blue-600/20'
+                        ? 'bg-blue-50 dark:bg-blue-950/80 border-blue-600 text-blue-950 dark:text-blue-200 font-bold ring-2 ring-blue-600/20'
                         : 'bg-slate-50 dark:bg-[#1a1b20] border-slate-200 dark:border-neutral-700 text-slate-600 dark:text-neutral-400 hover:border-slate-300 dark:hover:border-neutral-600'
                     }`}
                   >
@@ -139,7 +138,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                 step="7"
                 value={storageDays}
                 onChange={(e) => setStorageDays(Number(e.target.value))}
-                className="w-full h-2 bg-slate-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                className="w-full h-2 bg-slate-200 dark:bg-neutral-700 rounded appearance-none cursor-pointer accent-blue-600"
               />
               <div className="flex justify-between text-[11px] text-slate-400 dark:text-neutral-500 font-mono">
                 <span>7 días</span>
@@ -156,7 +155,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                 <select
                   value={compression}
                   onChange={(e) => setCompression(e.target.value as any)}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 text-xs focus:outline-none focus:border-blue-600"
+                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 text-xs focus:outline-none focus:border-blue-600"
                 >
                   <option value="h265">H.265+ (Ahorro del 50-70%)</option>
                   <option value="h264">H.264 Estándar</option>
@@ -167,7 +166,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                 <select
                   value={recordingMode}
                   onChange={(e) => setRecordingMode(e.target.value as any)}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 text-xs focus:outline-none focus:border-blue-600"
+                  className="w-full px-3.5 py-2.5 rounded-md bg-slate-50 dark:bg-[#1a1b20] border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 text-xs focus:outline-none focus:border-blue-600"
                 >
                   <option value="motion">Inteligente por Movimiento / IA</option>
                   <option value="continuous">Grabación Continua 24/7</option>
@@ -178,7 +177,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
           </div>
 
           {/* Right Live Results Output (5 cols) */}
-          <div className="lg:col-span-5 p-6 sm:p-9 rounded-3xl bg-[#090a0d] text-white border border-neutral-800 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+          <div className="lg:col-span-5 p-6 sm:p-9 rounded-md bg-[#090a0d] text-white border border-neutral-800 flex flex-col justify-between relative overflow-hidden">
             
             <div className="space-y-5">
               <div className="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-wider">
@@ -188,7 +187,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
 
               <div className="space-y-4">
                 {/* Storage Result */}
-                <div className="p-5 rounded-2xl bg-[#14151b] border border-neutral-800/90 space-y-1 shadow-inner">
+                <div className="p-5 rounded-md bg-[#14151b] border border-neutral-800/90 space-y-1">
                   <div className="text-xs text-neutral-400 flex items-center gap-1.5">
                     <HardDrive className="w-4 h-4 text-blue-400" />
                     <span>Capacidad de Almacenamiento:</span>
@@ -202,7 +201,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                 </div>
 
                 {/* Network Bandwidth */}
-                <div className="p-5 rounded-2xl bg-[#14151b] border border-neutral-800/90 space-y-1 shadow-inner">
+                <div className="p-5 rounded-md bg-[#14151b] border border-neutral-800/90 space-y-1">
                   <div className="text-xs text-neutral-400 flex items-center gap-1.5">
                     <Zap className="w-4 h-4 text-amber-400" />
                     <span>Ancho de Banda Total en Red Local:</span>
@@ -216,7 +215,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                 </div>
 
                 {/* Hard Drive Recommendation */}
-                <div className="p-5 rounded-2xl bg-[#14151b] border border-neutral-800/90 space-y-1.5 shadow-inner">
+                <div className="p-5 rounded-md bg-[#14151b] border border-neutral-800/90 space-y-1.5">
                   <div className="text-xs text-neutral-400">Configuración de Discos Recomendada:</div>
                   <div className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
                     <Server className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -244,7 +243,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-black text-xs sm:text-sm shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3.5 rounded-md bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-black text-xs sm:text-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Enviar Cálculo por WhatsApp</span>
@@ -253,7 +252,7 @@ export const BandwidthVoIPCalculator: React.FC<{ onOpenQuote: (srv?: string) => 
               <button
                 type="button"
                 onClick={() => onOpenQuote('cctv-videovigilancia')}
-                className="w-full py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full py-3 rounded-md bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/10 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <span>Cotizar en Línea con Instalación</span>
                 <ArrowRight className="w-3.5 h-3.5" />

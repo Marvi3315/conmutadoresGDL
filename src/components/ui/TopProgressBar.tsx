@@ -81,7 +81,7 @@ export const TopProgressBar: React.FC = () => {
         {/* Navigation Fast Pulsing Indicator */}
         {isNavigating && (
           <div
-            className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400 shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-200 ease-out"
+            className="absolute top-0 left-0 h-full bg-blue-600 transition-all duration-200 ease-out"
             style={{ width: `${navProgress}%` }}
           />
         )}
@@ -89,7 +89,7 @@ export const TopProgressBar: React.FC = () => {
         {/* Continuous Subtle Scroll Progress Bar */}
         {!isNavigating && (
           <div
-            className="h-full bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-500 transition-all duration-150 ease-out shadow-[0_0_8px_rgba(37,99,235,0.6)]"
+            className="h-full bg-blue-600 transition-all duration-150 ease-out"
             style={{ width: `${scrollProgress}%` }}
           />
         )}
