@@ -296,7 +296,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
               <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-100/90 dark:from-[#0a0b0e] to-transparent z-10 pointer-events-none" />
 
               {/* Continuous Infinite Flowing Track */}
-              <div className="animate-marquee-continuous gap-4">
+              <div className="animate-marquee-continuous">
                 {/* 2 Sets of Brands for seamless continuous marquee */}
                 {[...brandLogos, ...brandLogos].map((b, idx) => (
                   <BrandTile key={idx} b={b} index={idx % brandLogos.length} className="shrink-0 w-64 sm:w-72" />
