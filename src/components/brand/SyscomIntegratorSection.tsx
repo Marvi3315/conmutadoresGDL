@@ -129,22 +129,21 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
 
   return (
     <section id="syscom" className="py-16 sm:py-24 bg-slate-100/70 dark:bg-[#0a0b0e] border-t border-slate-200 dark:border-neutral-800/80 text-slate-900 dark:text-white relative overflow-hidden transition-colors duration-300">
-      {/* Background Ambient Lighting */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/5 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-emerald-600/5 dark:bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main Integrator Hero Bento Box */}
         <FadeInUp delay={0} distance={20}>
-          <div className="rounded-3xl bg-white dark:bg-neutral-900/90 border border-slate-200 dark:border-neutral-800/90 p-6 sm:p-10 lg:p-12 shadow-xl dark:shadow-2xl relative overflow-hidden mb-16 backdrop-blur-md">
+          <div className="rounded-md bg-white dark:bg-neutral-900 border border-slate-300 dark:border-neutral-700 p-6 sm:p-10 lg:p-12 relative overflow-hidden mb-16">
             
             {/* Top Tag & National Badge */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400 text-xs font-black uppercase tracking-wider">
-                <Award className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                <span>{SYSCOM_PARTNER_INFO.badge}</span>
+              <div className="flex items-center gap-4">
+                <div className="h-14 px-5 flex items-center bg-white border border-slate-300 dark:border-neutral-700 rounded-md">
+                  <BrandLogo brand="Syscom" className="h-7 w-auto" textClassName="text-lg font-black tracking-widest !text-slate-800" />
+                </div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-neutral-400">
+                  {SYSCOM_PARTNER_INFO.badge}
+                </span>
               </div>
               
               <div className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-neutral-300 bg-slate-50 dark:bg-neutral-950/80 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-neutral-800">
@@ -158,7 +157,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
               {/* Left Column Text */}
               <div className="lg:col-span-7 space-y-4">
                 <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-950 dark:text-white leading-tight">
-                  Integrador Oficial Autorizado <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">SYSCOM</span>
+                  Integrador Oficial Autorizado SYSCOM
                 </h2>
                 <p className="text-sm sm:text-base text-slate-700 dark:text-neutral-300 font-semibold leading-relaxed">
                   {SYSCOM_PARTNER_INFO.tagline}
