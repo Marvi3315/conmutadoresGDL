@@ -102,8 +102,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           {filteredServices.map((service, index) => (
             <article
               key={service.id}
-              className="group flex flex-col bg-white dark:bg-[#131418] p-6 sm:p-7 transition-colors hover:bg-slate-50 dark:hover:bg-[#181a1f]"
+              className="group flex flex-col bg-white dark:bg-[#131418] transition-colors"
             >
+              <div className="relative h-40 overflow-hidden bg-slate-200 dark:bg-neutral-800 border-b border-slate-300 dark:border-neutral-700">
+                <img
+                  src={service.imageUrl}
+                  alt={service.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover grayscale-[35%] group-hover:grayscale-0 transition-[filter] duration-300"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                />
+              </div>
+
+              <div className="flex flex-col flex-1 p-6 sm:p-7">
               <div className="flex items-baseline justify-between gap-3 text-xs">
                 <span className="font-mono tabular-nums text-slate-400 dark:text-neutral-500">
                   {String(index + 1).padStart(2, '0')}
@@ -151,6 +162,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                   <span>Cotizar</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
+              </div>
               </div>
             </article>
           ))}
