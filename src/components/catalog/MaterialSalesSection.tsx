@@ -98,7 +98,7 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
         </FadeInUp>
 
         {/* Filter & Search Tech Toolbar */}
-        <div className="bg-white dark:bg-[#131418] rounded-3xl p-5 sm:p-6 border border-slate-200 dark:border-neutral-800 shadow-sm mb-10 space-y-4">
+        <div className="bg-white dark:bg-[#131418] rounded-md p-4 sm:p-5 border border-slate-200 dark:border-neutral-800 mb-8 space-y-3">
           
           {/* Search Row */}
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
@@ -140,16 +140,16 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
           </div>
 
           {/* Quick Brand Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none border-t border-slate-100 dark:border-neutral-800/80 pt-3">
+          <div className="flex items-center overflow-x-auto scrollbar-none border-t border-slate-100 dark:border-neutral-800/80 pt-3">
             <span className="text-xs font-bold text-slate-400 dark:text-neutral-500 mr-1 shrink-0 uppercase tracking-wider">Marca:</span>
             {brandOptions.map((brand) => (
               <button
                 key={brand.id}
                 onClick={() => setSelectedBrand(brand.id)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+                className={`px-1 py-1.5 mr-3 text-xs whitespace-nowrap border-b-2 transition-colors cursor-pointer ${
                   selectedBrand === brand.id
-                    ? 'bg-blue-600 text-white shadow-sm ring-2 ring-blue-600/30'
-                    : 'bg-slate-100 dark:bg-neutral-800/90 text-slate-600 dark:text-neutral-300 hover:bg-slate-200 dark:hover:bg-neutral-700'
+                    ? 'border-slate-900 dark:border-white text-slate-900 dark:text-white font-bold'
+                    : 'border-transparent text-slate-500 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 {brand.label}
@@ -158,16 +158,16 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
           </div>
 
           {/* Quick Category / Item Type Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+          <div className="flex items-center overflow-x-auto scrollbar-none">
             <span className="text-xs font-bold text-slate-400 dark:text-neutral-500 mr-1 shrink-0 uppercase tracking-wider">Línea:</span>
             {categoryOptions.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                className={`px-1 py-1.5 mr-3 text-xs whitespace-nowrap border-b-2 transition-colors cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-slate-900 dark:bg-neutral-200 text-white dark:text-neutral-950 font-bold'
-                    : 'bg-slate-50 dark:bg-neutral-800/50 text-slate-500 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-neutral-800'
+                    ? 'border-slate-900 dark:border-white text-slate-900 dark:text-white font-bold'
+                    : 'border-transparent text-slate-500 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 {cat.label}
@@ -193,103 +193,96 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredItems.map((item) => (
-              <div
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {filteredItems.map((item, idx) => (
+              <article
                 key={item.id}
-                className="rounded-3xl bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 hover:border-blue-500/60 dark:hover:border-blue-500/60 transition-all duration-300 p-5 flex flex-col justify-between group shadow-sm hover:shadow-2xl hover:-translate-y-1 overflow-hidden"
+                className="group flex flex-col bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 rounded-md hover:border-slate-900 dark:hover:border-neutral-300 transition-colors"
               >
-                <div className="overflow-hidden">
-                  {/* Image Container with Badges */}
-                  <div className="relative h-44 sm:h-48 rounded-2xl overflow-hidden mb-4 bg-slate-100 dark:bg-[#1c1d23] flex items-center justify-center border border-slate-100 dark:border-neutral-800">
-                    {item.imageUrl && !item.imageUrl.includes('images.unsplash.com') ? (
-                      <img
-                        src={item.imageUrl}
-                        alt={item.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-white flex items-center justify-center p-8 group-hover:scale-105 transition-transform duration-500">
-                        <BrandLogo brand={item.brand} className="max-h-20 w-auto max-w-full" textClassName="text-2xl font-black tracking-widest !text-slate-800 text-center" />
-                      </div>
-                    )}
-                    
-                    {/* Brand Pill */}
-                    <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-blue-600/90 backdrop-blur-xs text-white text-[9.5px] font-black tracking-wider uppercase shadow-md max-w-[50%] truncate">
-                      {item.brand}
+                {/* Placa de marca / foto */}
+                <div className="relative h-36 border-b border-slate-200 dark:border-neutral-800 bg-white overflow-hidden">
+                  {item.imageUrl && !item.imageUrl.includes('images.unsplash.com') ? (
+                    <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" loading="lazy" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center p-6">
+                      <BrandLogo brand={item.brand} className="max-h-16 w-auto max-w-full" textClassName="text-2xl font-black tracking-widest !text-slate-800 text-center" />
                     </div>
+                  )}
+                  <span className="absolute top-2 left-2.5 font-mono text-[10px] tabular-nums text-slate-400">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                </div>
 
-                    {/* Tag Badge */}
-                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-slate-900/90 text-white text-[9px] font-bold backdrop-blur-xs shadow-md max-w-[45%] truncate text-right">
-                      {item.tag}
-                    </div>
-
-                    {/* Stock Indicator */}
-                    {item.inStock && (
-                      <div className="absolute bottom-2.5 left-2.5 px-2 py-0.5 rounded-md bg-emerald-950/85 backdrop-blur-xs border border-emerald-700/60 text-emerald-300 text-[9.5px] font-bold flex items-center gap-1.5 shadow-md max-w-[90%] truncate">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0 animate-pulse" />
-                        <span className="truncate">{item.stockQuantity || 'Stock Disponible'}</span>
-                      </div>
-                    )}
+                <div className="flex-1 p-4 flex flex-col">
+                  <div className="flex items-baseline justify-between gap-2 text-[11px] text-slate-500 dark:text-neutral-400">
+                    <span className="font-semibold uppercase tracking-wide text-slate-700 dark:text-neutral-200">{item.brand}</span>
+                    {item.tag && <span className="truncate italic">{item.tag}</span>}
                   </div>
 
-                  {/* Codes (SKU & Syscom) */}
-                  <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
-                    {item.sku && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-800 text-slate-700 dark:text-neutral-300 font-mono text-[9.5px] font-semibold">
-                        <Tag className="w-2.5 h-2.5 shrink-0" />
-                        <span className="truncate max-w-[140px]">SKU: {item.sku}</span>
-                      </span>
-                    )}
-                    {item.syscomCode && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 font-mono text-[9.5px] font-bold border border-blue-200 dark:border-blue-900">
-                        <span className="truncate max-w-[140px]">SYSCOM: {item.syscomCode}</span>
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Title & Model */}
-                  <h3 className="font-extrabold text-slate-950 dark:text-white text-sm sm:text-[15px] leading-snug break-words mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="mt-1.5 font-bold text-slate-950 dark:text-white text-[15px] leading-snug break-words">
                     {item.name}
                   </h3>
-                  <div className="text-[11px] text-slate-400 dark:text-neutral-500 font-mono break-all mb-2">
-                    Modelo: {item.model}
-                  </div>
 
-                  {/* Description */}
-                  <p className="text-xs text-slate-600 dark:text-neutral-400 mb-3.5 leading-relaxed break-words line-clamp-3">
+                  <p className="mt-2 text-xs text-slate-600 dark:text-neutral-400 leading-relaxed line-clamp-3">
                     {item.description}
                   </p>
 
-                  {/* Specs List */}
-                  <div className="space-y-1.5 mb-4 pt-2.5 border-t border-slate-100 dark:border-neutral-800/80">
-                    {item.specs.slice(0, 3).map((spec, sIdx) => (
-                      <div key={sIdx} className="flex items-start gap-1.5 text-[11px] text-slate-600 dark:text-neutral-300 leading-snug">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
-                        <span className="break-words">{spec}</span>
+                  {/* Ficha técnica */}
+                  <dl className="mt-4 text-[11px] divide-y divide-slate-200 dark:divide-neutral-800 border-y border-slate-200 dark:border-neutral-800">
+                    <div className="flex justify-between gap-3 py-1.5">
+                      <dt className="text-slate-500 dark:text-neutral-500">Modelo</dt>
+                      <dd className="font-mono text-slate-800 dark:text-neutral-200 text-right break-all">{item.model}</dd>
+                    </div>
+                    {item.sku && (
+                      <div className="flex justify-between gap-3 py-1.5">
+                        <dt className="text-slate-500 dark:text-neutral-500">SKU</dt>
+                        <dd className="font-mono text-slate-800 dark:text-neutral-200 text-right break-all">{item.sku}</dd>
                       </div>
+                    )}
+                    {item.syscomCode && (
+                      <div className="flex justify-between gap-3 py-1.5">
+                        <dt className="text-slate-500 dark:text-neutral-500">SYSCOM</dt>
+                        <dd className="font-mono text-slate-800 dark:text-neutral-200 text-right break-all">{item.syscomCode}</dd>
+                      </div>
+                    )}
+                    <div className="flex justify-between gap-3 py-1.5">
+                      <dt className="text-slate-500 dark:text-neutral-500">Garantía</dt>
+                      <dd className="text-slate-800 dark:text-neutral-200 text-right">
+                        {item.warranty.replace('Directo con Conmutadores GDL', '').replace('SYSCOM / Conmutadores GDL', '').trim() || 'Directa'}
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <ul className="mt-3 space-y-1 text-[11px] text-slate-600 dark:text-neutral-300 leading-snug">
+                    {item.specs.slice(0, 3).map((spec, sIdx) => (
+                      <li key={sIdx} className="flex gap-2">
+                        <span aria-hidden className="text-slate-400 dark:text-neutral-600">–</span>
+                        <span className="break-words">{spec}</span>
+                      </li>
                     ))}
+                  </ul>
+
+                  <div className="mt-auto pt-4 flex items-center justify-between gap-3">
+                    {item.inStock ? (
+                      <span className="inline-flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-neutral-400 min-w-0">
+                        <span className="w-1.5 h-1.5 bg-emerald-500 shrink-0" />
+                        <span className="truncate">{item.stockQuantity || 'Disponible'}</span>
+                      </span>
+                    ) : (
+                      <span className="text-[11px] text-slate-400">Bajo pedido</span>
+                    )}
                   </div>
                 </div>
 
-                {/* Bottom Action Area */}
-                <div className="pt-3 border-t border-slate-100 dark:border-neutral-800/80 flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleWhatsAppQuote(item)}
-                    className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/20 cursor-pointer text-center"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5 shrink-0" />
-                    <span>Cotizar Producto</span>
-                  </button>
-
-                  <div className="px-2 py-2 rounded-xl bg-slate-100 dark:bg-neutral-800 text-[10px] font-mono font-medium text-slate-600 dark:text-neutral-400 text-center shrink-0 border border-slate-200 dark:border-neutral-700 max-w-[100px] truncate" title={item.warranty}>
-                    {item.warranty.replace('Directo con Conmutadores GDL', '').replace('SYSCOM / Conmutadores GDL', '').trim()}
-                  </div>
-                </div>
-
-              </div>
+                <button
+                  type="button"
+                  onClick={() => handleWhatsAppQuote(item)}
+                  className="flex items-center justify-between px-4 py-3 border-t border-slate-200 dark:border-neutral-800 text-xs font-bold text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-colors cursor-pointer rounded-b-md"
+                >
+                  <span>Cotizar producto</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </article>
             ))}
           </div>
         )}

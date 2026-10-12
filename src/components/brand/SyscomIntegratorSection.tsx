@@ -17,6 +17,26 @@ import {
 import { SYSCOM_PARTNER_INFO, COMPANY_INFO } from '../../data/telecomData';
 import { FadeInUp } from '../ui/FadeInUp';
 
+
+const BrandTile: React.FC<{ b: { name: string; category: string; role: string }; index: number; className?: string }> = ({ b, index, className = '' }) => (
+  <button
+    type="button"
+    onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
+    className={`group text-left bg-white dark:bg-neutral-900 border border-slate-300 dark:border-neutral-700 rounded-md hover:border-slate-900 dark:hover:border-neutral-300 transition-colors cursor-pointer ${className}`}
+  >
+    <div className="h-24 flex items-center justify-center bg-white rounded-t-md border-b border-slate-300 dark:border-neutral-700 px-6">
+      <BrandLogo brand={b.name} className="max-h-12 w-auto max-w-full" textClassName="text-xl font-black tracking-widest !text-slate-800" />
+    </div>
+    <div className="px-4 py-3">
+      <div className="flex items-baseline justify-between gap-3">
+        <span className="text-sm font-bold text-slate-900 dark:text-white">{b.category}</span>
+        <span className="font-mono text-[10px] tabular-nums text-slate-400 dark:text-neutral-500">{String(index + 1).padStart(2, '0')}</span>
+      </div>
+      <p className="mt-1 text-xs text-slate-600 dark:text-neutral-400 leading-snug">{b.role}</p>
+    </div>
+  </button>
+);
+
 export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = ({ onOpenQuote }) => {
   const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel');
 
@@ -279,33 +299,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
               <div className="animate-marquee-continuous gap-4">
                 {/* 2 Sets of Brands for seamless continuous marquee */}
                 {[...brandLogos, ...brandLogos].map((b, idx) => (
-                  <div
-                    key={idx}
-                    className={`shrink-0 w-64 sm:w-72 p-5 rounded-2xl bg-white dark:bg-neutral-900/90 bg-gradient-to-b ${b.accentColor} border backdrop-blur-md flex flex-col justify-between transition-all duration-300 hover:scale-105 shadow-md dark:shadow-lg cursor-pointer group`}
-                    onClick={() => {
-                      const el = document.getElementById('productos');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className={`text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded border ${b.badgeColor}`}>
-                          {b.category}
-                        </span>
-                        <ArrowUpRight className="w-4 h-4 text-slate-400 dark:text-neutral-500 group-hover:text-blue-600 dark:group-hover:text-white transition-colors" />
-                      </div>
-                      
-                      <div className="h-14 flex items-center justify-center rounded-xl bg-white border border-slate-200 dark:border-white/10 px-3 py-2 mt-1">
-                        <BrandLogo brand={b.name} className="h-9 w-auto max-w-full" textClassName="text-lg font-black tracking-wider !text-slate-800" />
-                      </div>
-                    </div>
-
-                    <div className="mt-4 pt-3 border-t border-slate-200/80 dark:border-white/10">
-                      <p className="text-xs text-slate-600 dark:text-neutral-300 font-medium leading-snug">
-                        {b.role}
-                      </p>
-                    </div>
-                  </div>
+                  <BrandTile key={idx} b={b} index={idx % brandLogos.length} className="shrink-0 w-64 sm:w-72" />
                 ))}
               </div>
 
@@ -317,34 +311,9 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
             </div>
           ) : (
             /* VIEW MODE 2: REFINED FULL HIGH-TECH GRID */
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 pt-2">
               {brandLogos.map((b, idx) => (
-                <div 
-                  key={idx}
-                  className={`p-5 rounded-2xl bg-white dark:bg-neutral-900/90 bg-gradient-to-b ${b.accentColor} border backdrop-blur-md flex flex-col justify-between transition-all duration-300 hover:scale-[1.03] shadow-md dark:shadow-xl cursor-pointer group`}
-                  onClick={() => {
-                    const el = document.getElementById('productos');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className={`text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded border ${b.badgeColor}`}>
-                        {b.category}
-                      </span>
-                      <ArrowUpRight className="w-4 h-4 text-slate-400 dark:text-neutral-500 group-hover:text-blue-600 dark:group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="h-14 flex items-center justify-center rounded-xl bg-white border border-slate-200 dark:border-white/10 px-3 py-2 mt-1">
-                        <BrandLogo brand={b.name} className="h-9 w-auto max-w-full" textClassName="text-lg font-black tracking-wider !text-slate-800" />
-                      </div>
-                  </div>
-
-                  <div className="mt-3 pt-3 border-t border-slate-200/80 dark:border-white/10">
-                    <p className="text-xs text-slate-600 dark:text-neutral-300 font-medium leading-snug">
-                      {b.role}
-                    </p>
-                  </div>
-                </div>
+                <BrandTile key={idx} b={b} index={idx} />
               ))}
             </div>
           )}
