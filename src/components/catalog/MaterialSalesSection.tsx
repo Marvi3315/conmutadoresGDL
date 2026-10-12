@@ -254,7 +254,7 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
                     {item.inStock ? (
                       <span className="inline-flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-neutral-400 min-w-0">
                         <span className="w-1.5 h-1.5 bg-emerald-500 shrink-0" />
-                        <span className="truncate">{item.stockQuantity || 'Disponible'}</span>
+                        <span className="truncate">En existencia</span>
                       </span>
                     ) : (
                       <span className="text-[11px] text-slate-400">Bajo pedido</span>

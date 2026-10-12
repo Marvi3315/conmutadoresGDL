@@ -82,17 +82,13 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
             </p>
 
             <div className="space-y-2 text-xs text-slate-300">
-              <div className="flex items-center gap-2 text-emerald-400 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>+18 años conectando empresas e industrias en Jalisco</span>
-              </div>
               <div className="flex items-center gap-2 text-blue-300 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>Distribuidores e instaladores autorizados multimarca</span>
               </div>
               <div className="flex items-center gap-2 text-blue-300 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                <span>Cuadrillas técnicas con respuesta de emergencia &lt;2 horas</span>
+                <span>Atención en sitio en Guadalajara y envíos a todo México</span>
               </div>
             </div>
 
