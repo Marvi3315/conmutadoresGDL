@@ -233,18 +233,6 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
                       <dt className="text-slate-500 dark:text-neutral-500">Modelo</dt>
                       <dd className="font-mono text-slate-800 dark:text-neutral-200 text-right break-all">{item.model}</dd>
                     </div>
-                    {item.sku && (
-                      <div className="flex justify-between gap-3 py-1.5">
-                        <dt className="text-slate-500 dark:text-neutral-500">SKU</dt>
-                        <dd className="font-mono text-slate-800 dark:text-neutral-200 text-right break-all">{item.sku}</dd>
-                      </div>
-                    )}
-                    {item.syscomCode && (
-                      <div className="flex justify-between gap-3 py-1.5">
-                        <dt className="text-slate-500 dark:text-neutral-500">SYSCOM</dt>
-                        <dd className="font-mono text-slate-800 dark:text-neutral-200 text-right break-all">{item.syscomCode}</dd>
-                      </div>
-                    )}
                     <div className="flex justify-between gap-3 py-1.5">
                       <dt className="text-slate-500 dark:text-neutral-500">Garantía</dt>
                       <dd className="text-slate-800 dark:text-neutral-200 text-right">
