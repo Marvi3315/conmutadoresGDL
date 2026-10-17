@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
             </a>
 
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Empresa líder en Guadalajara especializada en venta, instalación, programación y mantenimiento de conmutadores telefónicos IP, CCTV 4K, cableado estructurado certificado y sistemas de control de acceso.
+              Empresa líder en Guadalajara especializada en venta, instalación, programación y mantenimiento de conmutadores telefónicos IP, CCTV 4K, cableado estructurado y sistemas de control de acceso.
             </p>
 
             <div className="space-y-2 text-xs text-slate-300">
@@ -226,7 +226,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
         {/* Bottom copyright and legal */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} Conmutadores GDL (conmutadoresgdl.com.mx). Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Conmutadores GDL (conmutadoresgdl.com). Todos los derechos reservados.
           </div>
           <div className="flex items-center gap-6">
             <span>Guadalajara, Jalisco, México</span>

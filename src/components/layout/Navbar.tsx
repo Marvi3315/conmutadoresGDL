@@ -72,8 +72,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
       id: 'cableado-redes-fibra', 
       name: 'Cableado Estructurado & Fibra', 
       icon: Network, 
-      desc: 'Panduit Cat6/6A y enlaces de fibra óptica certificados', 
-      badge: 'Panduit Certified',
+      desc: 'Panduit Cat6/6A y enlaces de fibra óptica', 
+      badge: 'Cableado',
       color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20' 
     },
     { 

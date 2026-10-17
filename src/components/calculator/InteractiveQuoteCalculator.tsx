@@ -47,7 +47,6 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
   const [includeSoftphoneApp, setIncludeSoftphoneApp] = useState<boolean>(true);
   const [includeCallRecording, setIncludeCallRecording] = useState<boolean>(true);
   const [includeUPSBackup, setIncludeUPSBackup] = useState<boolean>(true);
-  const [includeFlukeCert, setIncludeFlukeCert] = useState<boolean>(false);
   const [includeMaintenancePolicy, setIncludeMaintenancePolicy] = useState<boolean>(true);
 
   // Client form
@@ -87,7 +86,6 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
     if (includeUPSBackup) addons.push('UPS No-Break');
     if (serviceType === 'conmutadores-ip' && includeCallRecording) addons.push('Grabación de llamadas');
     if (serviceType === 'conmutadores-ip' && includeSoftphoneApp) addons.push('App móvil');
-    if (serviceType === 'cableado-redes-fibra' && includeFlukeCert) addons.push('Certificación Fluke');
 
     const message =
       `*SOLICITUD DE COTIZACIÓN - CONMUTADORES GDL*\n\n` +
@@ -188,7 +186,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                   {[
                     { id: 'conmutadores-ip', name: 'Conmutador IP & PBX', icon: Cpu, desc: 'Central IP, IVR y teléfonos SIP' },
                     { id: 'cctv-videovigilancia', name: 'CCTV & Cámaras 4K', icon: Camera, desc: 'NVR con IA y visión ColorVu' },
-                    { id: 'cableado-redes-fibra', name: 'Cableado & Fibra Óptica', icon: Network, desc: 'Cat6/6A y racks certificados' },
+                    { id: 'cableado-redes-fibra', name: 'Cableado & Fibra Óptica', icon: Network, desc: 'Cat6/6A, racks y fibra' },
                     { id: 'control-acceso-asistencia', name: 'Control de Acceso', icon: ShieldCheck, desc: 'Facial, biométrico y chapas' },
                     { id: 'equipos-redes', name: 'Switch, Router & WiFi', icon: Wifi, desc: 'Equipos de red y cobertura inalámbrica' },
                     { id: 'reparacion-soporte-tecnico', name: 'Póliza o Reparación', icon: Wrench, desc: 'Mantenimiento preventivo/correctivo' },
@@ -327,21 +325,6 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                         />
                       </label>
                     </>
-                  )}
-
-                  {serviceType === 'cableado-redes-fibra' && (
-                    <label className="flex items-center justify-between p-3.5 rounded-md bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 cursor-pointer">
-                      <div className="space-y-0.5">
-                        <div className="text-sm font-bold text-slate-900 dark:text-white">Certificación Fluke Networks nodo por nodo</div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400">Entrega de gráfica de reflectometría y garantía de 15 años de enlace.</div>
-                      </div>
-                      <input
-                        type="checkbox"
-                        checked={includeFlukeCert}
-                        onChange={(e) => setIncludeFlukeCert(e.target.checked)}
-                        className="w-5 h-5 accent-blue-600 rounded cursor-pointer"
-                      />
-                    </label>
                   )}
                 </div>
               </div>

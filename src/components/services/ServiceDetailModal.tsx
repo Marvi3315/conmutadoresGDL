@@ -130,7 +130,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
             <div className="p-5 rounded-md bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-3">
               <div className="flex items-center gap-2 text-blue-700 dark:text-blue-400 font-bold text-sm">
                 <Award className="w-4 h-4" />
-                <span>Marcas y Equipos Certificados</span>
+                <span>Marcas y Equipos</span>
               </div>
               <p className="text-xs text-slate-600 dark:text-slate-400">
                 Suministramos exclusivamente equipo original con respaldo y garantía directa del fabricante:
@@ -144,7 +144,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
               </div>
               <div className="pt-2 border-t border-slate-200 dark:border-slate-700 text-xs text-emerald-700 dark:text-emerald-400 font-semibold flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
-                <span>Incluye pruebas de rendimiento y certificación.</span>
+                <span>Incluye pruebas de rendimiento.</span>
               </div>
             </div>
           </div>

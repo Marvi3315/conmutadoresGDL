@@ -73,7 +73,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               Ingeniería en Telecomunicaciones y Seguridad
             </h2>
             <p className="text-slate-600 dark:text-neutral-400 text-xs sm:text-base leading-relaxed">
-              Soluciones integrales de hardware, conmutadores IP, CCTV 4K, cableado estructurado certificado y pólizas de mantenimiento en Guadalajara, Jalisco y con cobertura técnica en toda la República Mexicana.
+              Soluciones integrales de hardware, conmutadores IP, CCTV 4K, cableado estructurado y pólizas de mantenimiento en Guadalajara, Jalisco y con cobertura técnica en toda la República Mexicana.
             </p>
           </div>
         </FadeInUp>
@@ -98,31 +98,24 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         </FadeInUp>
 
         {/* Servicios: cuadrícula plana con líneas compartidas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-300 dark:bg-neutral-700 border border-slate-300 dark:border-neutral-700 rounded-md overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredServices.map((service, index) => (
+            <FadeInUp key={service.id} delay={(index % 3) * 100} distance={28} className="h-full">
             <article
-              key={service.id}
-              className="group flex flex-col bg-white dark:bg-[#131418] transition-colors"
+              className="group h-full flex flex-col bg-white dark:bg-[#131418] border border-slate-300 dark:border-neutral-700 rounded-md overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-slate-900 dark:hover:border-neutral-300 hover:shadow-[0_14px_30px_-12px_rgba(0,0,0,0.35)]"
             >
               <div className="relative h-40 overflow-hidden bg-slate-200 dark:bg-neutral-800 border-b border-slate-300 dark:border-neutral-700">
                 <img
                   src={service.imageUrl}
                   alt={service.title}
                   loading="lazy"
-                  className="w-full h-full object-cover grayscale-[35%] group-hover:grayscale-0 transition-[filter] duration-300"
+                  className="w-full h-full object-cover grayscale-[35%] group-hover:grayscale-0 group-hover:scale-105 transition-[filter,transform] duration-500"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                 />
               </div>
 
               <div className="flex flex-col flex-1 p-6 sm:p-7">
-              <div className="flex items-baseline justify-between gap-3 text-xs">
-                <span className="font-mono tabular-nums text-slate-400 dark:text-neutral-500">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="text-slate-500 dark:text-neutral-400 text-right">{service.badge}</span>
-              </div>
-
-              <h3 className="mt-5 text-xl font-bold leading-snug text-slate-950 dark:text-white break-words">
+              <h3 className="text-xl font-bold leading-snug text-slate-950 dark:text-white break-words">
                 {service.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
@@ -165,6 +158,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               </div>
               </div>
             </article>
+            </FadeInUp>
           ))}
         </div>
 

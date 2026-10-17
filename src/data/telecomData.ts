@@ -130,25 +130,23 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'cableado-redes-fibra',
     title: 'Cableado Estructurado & Fibra Óptica',
-    shortDescription: 'Instalación y certificación de cableado Cat6/6A/7, enlaces de fibra óptica, racks de telecomunicaciones y redes Wi-Fi empresariales.',
-    fullDescription: 'La columna vertebral de la comunicación de tu empresa. Realizamos tendido, peinado de racks, parcheo, rotulación normativa y certificación con equipo Fluke Networks. Diseñamos redes de alta disponibilidad con switches administrables y puntos de acceso Wi-Fi 6 de cobertura total.',
+    shortDescription: 'Instalación de cableado Cat6/6A/7, enlaces de fibra óptica, racks de telecomunicaciones y redes Wi-Fi empresariales.',
+    fullDescription: 'La columna vertebral de la comunicación de tu empresa. Realizamos tendido, peinado de racks, parcheo, rotulación normativa y organización de racks. Diseñamos redes de alta disponibilidad con switches administrables y puntos de acceso Wi-Fi 6 de cobertura total.',
     iconName: 'Network',
     category: 'redes',
-    badge: 'Certificación Fluke',
+    badge: 'Cableado y Fibra',
     features: [
       'Cableado estructurado voz, datos y video Cat 6, Cat 6A y Cat 7 (10 Gbps)',
       'Instalación, conectorización y fusión de Fibra Óptica Monomodo y Multimodo',
       'Organización, peinado y reacondicionamiento de Racks y Gabinetes IDF/MDF',
       'Enlaces inalámbricos Punto a Punto (PtP) para interconectar bodegas a kilómetros',
-      'Redes Wi-Fi empresariales de alta densidad (Mesh, Roaming transparente)',
-      'Reporte de certificación de rendimiento de red nodo por nodo'
+      'Redes Wi-Fi empresariales de alta densidad (Mesh, Roaming transparente)'
     ],
     brands: ['Panduit', 'Belden', 'Ubiquiti', 'Cisco', 'MikroTik', 'CommScope', 'Optronics'],
     benefits: [
       'Fin a las caídas de internet y lentitud en sistemas ERP / Nube',
       'Instalaciones estéticas, normadas y fáciles de auditar',
-      'Escalabilidad garantizada para el crecimiento de tu empresa',
-      'Garantía por escrito de hasta 15 años en canal de enlace certificado'
+      'Escalabilidad garantizada para el crecimiento de tu empresa'
     ],
     popularUseCases: [
       'Nuevas oficinas corporativas y adecuaciones de edificios',
@@ -207,7 +205,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Access points WiFi 6 con cobertura uniforme y roaming sin cortes',
       'Segmentación por VLAN para voz, cámaras, invitados y administración',
       'Configuración, etiquetado y documentación de la red',
-      'Racks, patch panels y cableado estructurado certificado'
+      'Racks, patch panels y cableado estructurado'
     ],
     brands: ['Cisco', 'Dahua', 'Hikvision', 'Grandstream', 'Panduit', 'Linkedpro', 'Commscope'],
     benefits: [
@@ -268,8 +266,8 @@ export const EQUIPMENT_CATALOG: EquipmentItem[] = [
     model: 'PANDUIT TX6000 (NUC6C04BU-C)',
     brand: 'Panduit',
     category: 'panduit-material',
-    description: 'Bobina de cable de red Cat6 calibre 23 AWG, 100% cobre electrolítico puro sin aleaciones. Certificado para transmisión Gigabit y 10GBASE-T hasta 55 metros con margen superior a estándares TIA/EIA.',
-    specs: ['Categoría 6 U/UTP 4 pares 23 AWG', 'Conductor 100% Cobre Sólido', 'Forro CM azul retardante a la flama', 'Bobina de 305 metros (1,000 ft)', 'Certificación Fluke Channel & Permanent Link'],
+    description: 'Bobina de cable de red Cat6 calibre 23 AWG, 100% cobre electrolítico puro sin aleaciones. Apto para transmisión Gigabit y 10GBASE-T hasta 55 metros con margen superior a estándares TIA/EIA.',
+    specs: ['Categoría 6 U/UTP 4 pares 23 AWG', 'Conductor 100% Cobre Sólido', 'Forro CM azul retardante a la flama', 'Bobina de 305 metros (1,000 ft)'],
     inStock: true,
     stockQuantity: '45+ Bobinas en stock inmediato',
     warranty: 'Garantía del Sistema Panduit 20 Años',
@@ -290,7 +288,7 @@ export const EQUIPMENT_CATALOG: EquipmentItem[] = [
     stockQuantity: '600+ piezas disponibles',
     warranty: 'Garantía Panduit de Fábrica',
     imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80',
-    tag: 'Conectividad Certificada',
+    tag: 'Conectividad',
     sku: 'PAN-CJ688TGBL',
     syscomCode: 'CJ688TGBL'
   },
@@ -312,7 +310,7 @@ export const EQUIPMENT_CATALOG: EquipmentItem[] = [
   },
   {
     id: 'panduit-patch-cord-cat6',
-    name: 'Patch Cord Certificado Cat6 TX6 Plus (1m / 2m / 3m)',
+    name: 'Patch Cord Cat6 TX6 Plus (1m / 2m / 3m)',
     model: 'PANDUIT UTPSP7BUY / UTPSP3BUY',
     brand: 'Panduit',
     category: 'panduit-material',
@@ -663,7 +661,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     clientType: 'Empresa de Manufactura y Logística Metalmecánica',
     location: 'Corredor Industrial El Salto, Jalisco',
     challenge: 'Tenían un conmutador analógico Panasonic con más de 12 años con fallas frecuentes, líneas de cobre dañadas por humedad y sin posibilidad de comunicar su nave de producción con las oficinas de Zapopan.',
-    solution: 'Implementamos un Conmutador IP Grandstream UCM6304 con troncales SIP redundantes, tendido de 850 metros de fibra óptica monomodo certificada, y 65 teléfonos IP Grandstream con app móvil para ejecutivos foráneos.',
+    solution: 'Implementamos un Conmutador IP Grandstream UCM6304 con troncales SIP redundantes, tendido de 850 metros de fibra óptica monomodo, y 65 teléfonos IP Grandstream con app móvil para ejecutivos foráneos.',
     results: [
       'Reducción del 58% en gasto mensual de facturación telefónica',
       'Comunicación 100% gratuita e instantánea entre ambas plantas',
@@ -839,7 +837,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: '¿Qué garantía tienen las instalaciones y equipos suministrados?',
-    a: 'Todos nuestros equipos nuevos cuentan con garantía de 1 a 3 años respaldados directamente por el fabricante y SYSCOM. Además, nuestras instalaciones de cableado estructurado Panduit cuentan con garantía y certificación de enlace permanente.'
+    a: 'Todos nuestros equipos nuevos cuentan con garantía de 1 a 3 años respaldados directamente por el fabricante y SYSCOM. Además, nuestras instalaciones de cableado estructurado Panduit cuentan con garantía de instalación.'
   }
 ];
 
@@ -864,7 +862,7 @@ export const TESTIMONIALS = [
     name: 'Ing. Miguel Ángel Cortés',
     company: 'Planta de Empaques San Agustín',
     role: 'Jefe de Mantenimiento y Seguridad',
-    text: 'El suministro de cableado estructurado Panduit certificado y el sistema de cámaras 4K con IA AcuSense garantizó la seguridad de nuestra planta. Súper recomendados para proyectos serios.',
+    text: 'El suministro de cableado estructurado Panduit y el sistema de cámaras 4K con IA AcuSense garantizó la seguridad de nuestra planta. Súper recomendados para proyectos serios.',
     rating: 5,
     location: 'Tlajomulco, Jal.'
   }

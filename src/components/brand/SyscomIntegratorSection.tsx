@@ -30,7 +30,6 @@ const BrandTile: React.FC<{ b: { name: string; category: string; role: string };
     <div className="px-4 py-3">
       <div className="flex items-baseline justify-between gap-3">
         <span className="text-sm font-bold text-slate-900 dark:text-white">{b.category}</span>
-        <span className="font-mono text-[10px] tabular-nums text-slate-400 dark:text-neutral-500">{String(index + 1).padStart(2, '0')}</span>
       </div>
       <p className="mt-1 text-xs text-slate-600 dark:text-neutral-400 leading-snug">{b.role}</p>
     </div>
@@ -209,8 +208,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                       ['02', 'Almacenes en todo México', 'Stock local en Guadalajara y CEDIS en CDMX, Monterrey, Chihuahua y Mérida.'],
                       ['03', 'Asesoría de ingeniería', 'Validación de compatibilidad de tarjetas, módulos, fuentes y especificaciones.'],
                     ].map(([n, t, d]) => (
-                      <div key={n} className="flex gap-4 px-5 py-4">
-                        <dt className="font-mono text-[11px] tabular-nums text-slate-400 dark:text-neutral-500 pt-0.5">{n}</dt>
+                      <div key={n} className="px-5 py-4">
                         <dd>
                           <div className="font-semibold text-slate-900 dark:text-white">{t}</div>
                           <div className="mt-0.5 text-xs text-slate-600 dark:text-neutral-400 leading-relaxed">{d}</div>

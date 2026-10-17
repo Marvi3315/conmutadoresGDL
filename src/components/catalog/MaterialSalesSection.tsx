@@ -194,7 +194,7 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {filteredItems.map((item, idx) => (
+            {filteredItems.map((item) => (
               <article
                 key={item.id}
                 className="group flex flex-col bg-white dark:bg-[#131418] border border-slate-200 dark:border-neutral-800 rounded-md hover:border-slate-900 dark:hover:border-neutral-300 transition-colors"
@@ -208,15 +208,12 @@ export const MaterialSalesSection: React.FC<MaterialSalesSectionProps> = ({ onOp
                       <BrandLogo brand={item.brand} className="max-h-16 w-auto max-w-full" textClassName="text-2xl font-black tracking-widest !text-slate-800 text-center" />
                     </div>
                   )}
-                  <span className="absolute top-2 left-2.5 font-mono text-[10px] tabular-nums text-slate-400">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
                 </div>
 
                 <div className="flex-1 p-4 flex flex-col">
                   <div className="flex items-baseline justify-between gap-2 text-[11px] text-slate-500 dark:text-neutral-400">
                     <span className="font-semibold uppercase tracking-wide text-slate-700 dark:text-neutral-200">{item.brand}</span>
-                    {item.tag && <span className="truncate italic">{item.tag}</span>}
+                    
                   </div>
 
                   <h3 className="mt-1.5 font-bold text-slate-950 dark:text-white text-[15px] leading-snug break-words">
