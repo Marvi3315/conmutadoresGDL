@@ -61,7 +61,7 @@ function translateAuthError(code: string): string {
     case 'auth/network-request-failed':
       return 'Error de conexión. Revisa tu internet e intenta de nuevo.';
     case 'auth/weak-password':
-      return 'La nueva contraseña debe tener al menos 6 caracteres.';
+      return 'La nueva contraseña debe tener al menos 10 caracteres.';
     default:
       return 'Ocurrió un error inesperado. Intenta de nuevo.';
   }
@@ -266,8 +266,8 @@ export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ child
     if (!isFirebaseConfigured || !auth?.currentUser?.email) {
       return { success: false, error: 'No hay una sesión activa.' };
     }
-    if (!newPassword || newPassword.length < 6) {
-      return { success: false, error: 'La nueva contraseña debe tener al menos 6 caracteres.' };
+    if (!newPassword || newPassword.length < 10) {
+      return { success: false, error: 'La nueva contraseña debe tener al menos 10 caracteres.' };
     }
     try {
       const credential = EmailAuthProvider.credential(auth.currentUser.email, oldPassword);

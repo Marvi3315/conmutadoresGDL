@@ -170,7 +170,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               <p className="text-xs sm:text-sm text-neutral-300">Diseñamos soluciones a la medida integrando voz IP, CCTV con IA y enlaces de fibra óptica en toda la República.</p>
             </div>
             <a
-              href="#contacto"
+              href="/#contacto"
               className="px-5 py-3 rounded-md bg-white text-slate-950 hover:bg-slate-200 text-xs font-bold shrink-0 transition-colors flex items-center gap-2 cursor-pointer"
             >
               <span>Consultar con un Ingeniero</span>

@@ -130,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
               className="pointer-events-auto flex items-center justify-between mx-auto max-w-5xl min-w-0 bg-slate-950/90 dark:bg-[#0a0b0e]/90 border border-white/15 dark:border-blue-500/20 rounded-full py-1.5 px-3 sm:px-4 ring-1 ring-white/10 dark:ring-white/5 text-white"
             >
               {/* Left: Brand Monogram & Live Status */}
-              <a href="#" className="flex items-center gap-2.5 group shrink-0">
+              <a href="/" className="flex items-center gap-2.5 group shrink-0">
                 <div className="relative w-7 h-7 rounded overflow-hidden border border-blue-400/30 bg-black flex items-center justify-center group-hover:scale-105 transition-transform">
                   <PhoneHandsetLogo className="w-full h-full" />
                 </div>
@@ -149,31 +149,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
               {/* Center: Clean Navigation Links */}
               <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 text-xs font-semibold text-neutral-300 min-w-0 shrink">
                 <a 
-                  href="#servicios" 
+                  href="/#servicios" 
                   className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Servicios
                 </a>
                 <a 
-                  href="#productos" 
+                  href="/productos" 
                   className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Productos
                 </a>
                 <a 
-                  href="#syscom" 
+                  href="/#syscom" 
                   className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   SYSCOM
                 </a>
                 <a 
-                  href="#calculadora-red" 
+                  href="/#calculadora-red" 
                   className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Calculadora
                 </a>
                 <a 
-                  href="#contacto" 
+                  href="/#contacto" 
                   className="px-2 xl:px-3 py-1 rounded-full hover:text-white hover:bg-white/10 transition-colors whitespace-nowrap"
                 >
                   Contacto
@@ -238,7 +238,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
               <div className="flex items-center justify-between gap-2 min-w-0">
                 
                 {/* Logo & Compact Brand Title */}
-                <a href="#" className="flex items-center gap-2.5 group shrink-0">
+                <a href="/" className="flex items-center gap-2.5 group shrink-0">
                   <div className="w-8 h-8 rounded overflow-hidden shrink-0 border border-slate-200 dark:border-neutral-800 bg-black flex items-center justify-center group-hover:scale-105 transition-transform">
                     <PhoneHandsetLogo className="w-full h-full" />
                   </div>
@@ -321,7 +321,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                               <Radio className="w-3 h-3 text-blue-500 animate-pulse" />
                               <span>¿Requieres levantamiento técnico en sitio?</span>
                             </span>
-                            <a href="#contacto" className="text-blue-600 dark:text-blue-400 hover:underline font-bold flex items-center gap-0.5">
+                            <a href="/#contacto" className="text-blue-600 dark:text-blue-400 hover:underline font-bold flex items-center gap-0.5">
                               <span>Agendar</span>
                               <ArrowRight className="w-3 h-3" />
                             </a>
@@ -333,7 +333,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                   
                   {/* Productos */}
                   <a 
-                    href="#productos" 
+                    href="/productos" 
                     className="px-3 py-1.5 rounded text-slate-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-neutral-800/80 transition-colors"
                   >
                     Productos
@@ -341,7 +341,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
 
                   {/* SYSCOM */}
                   <a 
-                    href="#syscom" 
+                    href="/#syscom" 
                     className="px-3 py-1.5 rounded text-slate-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-neutral-800/80 transition-colors"
                   >
                     SYSCOM
@@ -349,7 +349,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
 
                   {/* Calculadora */}
                   <a 
-                    href="#calculadora-red" 
+                    href="/#calculadora-red" 
                     className="px-3 py-1.5 rounded text-slate-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-neutral-800/80 transition-colors"
                   >
                     Calculadora
@@ -357,7 +357,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
 
                   {/* Contacto */}
                   <a 
-                    href="#contacto" 
+                    href="/#contacto" 
                     className="px-3 py-1.5 rounded text-slate-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-neutral-800/80 transition-colors"
                   >
                     Contacto
@@ -366,10 +366,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
 
                 {/* Tablet Navigation Links (For screens between lg and xl) */}
                 <div className="hidden lg:flex xl:hidden items-center gap-1 text-xs font-semibold text-slate-700 dark:text-neutral-300">
-                  <a href="#servicios" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">Servicios</a>
-                  <a href="#productos" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">Productos</a>
-                  <a href="#syscom" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">SYSCOM</a>
-                  <a href="#contacto" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">Contacto</a>
+                  <a href="/#servicios" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">Servicios</a>
+                  <a href="/productos" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">Productos</a>
+                  <a href="/#syscom" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">SYSCOM</a>
+                  <a href="/#contacto" className="px-2.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-neutral-800/80">Contacto</a>
                 </div>
 
                 {/* Desktop Action Trigger & Stylized Executive Direct Line */}
@@ -505,28 +505,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
 
                     <div className="space-y-1 text-xs font-semibold text-slate-700 dark:text-neutral-300">
                       <a 
-                        href="#productos" 
+                        href="/productos" 
                         onClick={() => setMobileMenuOpen(false)}
                         className="block p-2 text-slate-800 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-neutral-800/80 rounded-md"
                       >
                         Productos
                       </a>
                       <a 
-                        href="#syscom" 
+                        href="/#syscom" 
                         onClick={() => setMobileMenuOpen(false)}
                         className="block p-2 text-slate-800 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-neutral-800/80 rounded-md"
                       >
                         SYSCOM
                       </a>
                       <a 
-                        href="#calculadora-red" 
+                        href="/#calculadora-red" 
                         onClick={() => setMobileMenuOpen(false)}
                         className="block p-2 text-slate-800 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-neutral-800/80 rounded-md"
                       >
                         Calculadora
                       </a>
                       <a 
-                        href="#contacto" 
+                        href="/#contacto" 
                         onClick={() => setMobileMenuOpen(false)}
                         className="block p-2 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-neutral-800/80 rounded-md"
                       >

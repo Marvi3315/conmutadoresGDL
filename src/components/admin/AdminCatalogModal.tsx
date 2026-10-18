@@ -606,7 +606,7 @@ export const AdminCatalogModal: React.FC = () => {
                   />
                   <input
                     type="password"
-                    placeholder="Nueva Contraseña (mínimo 6 caracteres)"
+                    placeholder="Nueva Contraseña (mínimo 10 caracteres)"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                     className="px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-700 text-xs text-white"

@@ -16,12 +16,13 @@ import {
 } from 'lucide-react';
 import { SYSCOM_PARTNER_INFO, COMPANY_INFO } from '../../data/telecomData';
 import { FadeInUp } from '../ui/FadeInUp';
+import { navigate } from '../../lib/router';
 
 
 const BrandTile: React.FC<{ b: { name: string; category: string; role: string }; index: number; className?: string }> = ({ b, index, className = '' }) => (
   <button
     type="button"
-    onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
+    onClick={() => navigate('/productos')}
     className={`group text-left bg-white dark:bg-neutral-900 border border-slate-300 dark:border-neutral-700 rounded-md hover:border-slate-900 dark:hover:border-neutral-300 transition-colors cursor-pointer ${className}`}
   >
     <div className="h-24 flex items-center justify-center bg-white rounded-t-md border-b border-slate-300 dark:border-neutral-700 px-6">
@@ -188,7 +189,7 @@ export const SyscomIntegratorSection: React.FC<{ onOpenQuote?: () => void }> = (
                   </a>
 
                   <a
-                    href="#productos"
+                    href="/productos"
                     className="px-5 py-3.5 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-neutral-950 dark:hover:bg-neutral-800 border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-neutral-200 font-bold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer"
                   >
                     <span>Ver Catálogo Panduit & Panasonic</span>

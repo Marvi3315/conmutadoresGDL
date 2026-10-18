@@ -2,21 +2,46 @@ rules_version = '2';
 
 // Reglas de seguridad de Firestore para Conmutadores GDL.
 //
-// - Cualquier visitante del sitio puede LEER el catálogo (para que se muestre
-//   públicamente en la página).
-// - Solo un usuario autenticado (el correo que crees en Firebase Authentication
-//   para el Lic. Felipe Romo) puede CREAR, EDITAR o BORRAR productos.
+// - Cualquier visitante puede LEER el catálogo (se muestra en la página pública).
+// - Solo los correos de la lista BLANCA de abajo pueden CREAR, EDITAR o BORRAR.
+//   Antes bastaba con "estar autenticado": si alguien lograba crear una cuenta
+//   en el proyecto (la API key de Firebase es pública), podía borrar o alterar
+//   todo el catálogo. Ahora una cuenta ajena NO puede escribir.
 //
-// Cómo publicar estas reglas: Firebase Console → Firestore Database → Reglas →
-// pega este contenido → Publicar. (Ver README.md para la guía completa).
+// IMPORTANTE: cambia los correos de ejemplo por los reales de Felipe y su
+// personal. Para agregar o quitar a alguien, edita la lista y publica de nuevo
+// (Firebase Console → Firestore Database → Reglas → Publicar).
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /catalog/{productId} {
-      allow read: if true;
-      allow write: if request.auth != null;
+
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email != null
+        && request.auth.token.email.lower() in [
+          'conmutadoresgdl@gmail.com'
+        ];
     }
 
-    // Por seguridad, cualquier otra colección queda bloqueada por defecto.
+    // Validación básica del producto para que nadie meta basura ni documentos gigantes.
+    function validProduct() {
+      let d = request.resource.data;
+      return d.name is string && d.name.size() > 0 && d.name.size() <= 200
+        && d.brand is string && d.brand.size() <= 60
+        && d.category is string && d.category.size() <= 60
+        && d.description is string && d.description.size() <= 3000
+        && d.specs is list && d.specs.size() <= 30
+        && d.imageUrl is string && d.imageUrl.size() <= 1000
+        && d.imageUrl.matches('^(https://.*|)$')
+        && d.inStock is bool;
+    }
+
+    match /catalog/{productId} {
+      allow read: if true;
+      allow create, update: if isAdmin() && validProduct();
+      allow delete: if isAdmin();
+    }
+
+    // Todo lo demás bloqueado.
     match /{document=**} {
       allow read, write: if false;
     }

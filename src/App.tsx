@@ -1,9 +1,11 @@
-import React, { Suspense, lazy, useState } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/home/Hero';
 import { ServicesSection } from './components/services/ServicesSection';
-import { MaterialSalesSection } from './components/catalog/MaterialSalesSection';
+import { ProductsPreviewSection } from './components/catalog/ProductsPreviewSection';
+import { ProductsPage } from './components/catalog/ProductsPage';
+import { useRoute } from './lib/router';
 import { SyscomIntegratorSection } from './components/brand/SyscomIntegratorSection';
 import { BandwidthVoIPCalculator } from './components/tools/BandwidthVoIPCalculator';
 import { ContactSection } from './components/contact/ContactSection';
@@ -23,9 +25,28 @@ const AdminCatalogModal = lazy(() =>
 );
 
 export default function App() {
+  const route = useRoute();
+  const isProductsPage = route.path === '/productos';
   const [isCalculatorOpen, setIsCalculatorOpen] = useState<boolean>(false);
   const [calculatorInitialService, setCalculatorInitialService] = useState<string>('conmutadores-ip');
   const [selectedServiceModalId, setSelectedServiceModalId] = useState<string | null>(null);
+
+  // Tras navegar: ir al ancla (#seccion) o al inicio de la página.
+  useEffect(() => {
+    if (route.hash) {
+      const id = route.hash.slice(1);
+      let tries = 0;
+      const t = window.setInterval(() => {
+        const el = document.getElementById(id);
+        if (el || ++tries > 20) {
+          window.clearInterval(t);
+          el?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+      return () => window.clearInterval(t);
+    }
+    window.scrollTo(0, 0);
+  }, [route.path, route.hash]);
 
   const handleOpenCalculator = (serviceId?: string) => {
     if (serviceId) {
@@ -55,6 +76,10 @@ export default function App() {
           {/* Main Content Sections */}
           <main className="flex-grow">
             
+            {isProductsPage ? (
+              <ProductsPage key={route.search} />
+            ) : (
+              <>
             {/* 1. Hero Section */}
             <Hero
               onOpenCalculator={handleOpenCalculator}
@@ -69,10 +94,8 @@ export default function App() {
               onSelectServiceModal={(id) => setSelectedServiceModalId(id)}
             />
 
-            {/* 3. Venta de Material & Artículos (Panduit, Panasonic, Grandstream, Hikvision) */}
-            <MaterialSalesSection
-              onOpenQuote={handleOpenCalculator}
-            />
+            {/* 3. Vista corta de productos → página /productos */}
+            <ProductsPreviewSection />
 
             {/* 4. Integrador Autorizado SYSCOM & Banner / Carrusel de Marcas */}
             <SyscomIntegratorSection
@@ -86,6 +109,8 @@ export default function App() {
 
             {/* 6. Free Site Survey Booking & Contact Info */}
             <ContactSection />
+              </>
+            )}
 
           </main>
 

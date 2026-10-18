@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
           
           {/* Col 1: Brand & Identity (spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-5">
-            <a href="#" className="flex items-center gap-3 group">
+            <a href="/" className="flex items-center gap-3 group">
               <div className="flex items-center justify-center w-10 h-10 rounded-md bg-black border border-slate-700 overflow-hidden p-0.5">
                 <PhoneHandsetLogo className="w-full h-full" />
               </div>
@@ -135,19 +135,19 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#calculadora-red" className="text-blue-400 hover:text-blue-300 flex items-center gap-1.5">
+                <a href="/#calculadora-red" className="text-blue-400 hover:text-blue-300 flex items-center gap-1.5">
                   <ChevronRight className="w-3.5 h-3.5 text-blue-500" />
                   <span>Calculadora CCTV & Almacenamiento</span>
                 </a>
               </li>
               <li>
-                <a href="#contacto" className="text-slate-400 hover:text-white flex items-center gap-1.5">
+                <a href="/#contacto" className="text-slate-400 hover:text-white flex items-center gap-1.5">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
                   <span>Levantamiento Técnico en Sitio</span>
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-slate-400 hover:text-white flex items-center gap-1.5">
+                <a href="/#servicios" className="text-slate-400 hover:text-white flex items-center gap-1.5">
                   <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
                   <span>Catálogo de Soluciones</span>
                 </a>
