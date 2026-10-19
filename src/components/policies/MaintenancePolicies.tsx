@@ -26,7 +26,7 @@ export const MaintenancePolicies: React.FC<{ onOpenQuote: (serviceId?: string) =
             <span>Continuidad Operativa Garantizada</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight">
-            Pólizas de Mantenimiento & Soporte Técnico 24/7
+            Pólizas de Mantenimiento & Soporte Técnico
           </h2>
           <p className="text-slate-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed">
             Protege la inversión tecnológica de tu empresa. Cero pérdidas por conmutadores apagados o cámaras sin señal con nuestros planes de mantenimiento en Guadalajara y Jalisco.

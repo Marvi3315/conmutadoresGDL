@@ -101,7 +101,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDescription: 'Protección perimetral inteligente para naves industriales, comercios, corporativos y fraccionamientos. Nuestras soluciones de CCTV IP incorporan analíticas avanzadas como detección humana y vehicular (evitando falsas alarmas), lectura de placas vehiculares (LPR) y almacenamiento redundante local o en nube.',
     iconName: 'Camera',
     category: 'seguridad',
-    badge: 'Monitoreo 24/7',
+    badge: 'Videovigilancia IP',
     features: [
       'Cámaras IP 4K Ultra HD con audio bidireccional integrado',
       'Tecnología ColorVu / Full Color (Visión a todo color 24 horas)',
@@ -247,7 +247,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Garantía por escrito en mano de obra y refacciones'
     ],
     popularUseCases: [
-      'Empresas con falla urgente en su conmutador actual',
+      'Empresas que necesitan reparar o actualizar su conmutador actual',
       'Oficinas que cambiaron de domicilio y requieren mover su infraestructura',
       'Negocios que perdieron la contraseña de administración de su PBX o CCTV',
       'Sustitución de cables roídos o dañados'
@@ -702,7 +702,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Grabación de llamadas para control de calidad médica',
       'Integración con su sistema de agenda médica en la nube'
     ],
-    servicesUsed: ['Telefonía IP', 'IVR & Call Center', 'Póliza Platino 24/7'],
+    servicesUsed: ['Telefonía IP', 'IVR & Call Center', 'Póliza de Mantenimiento'],
     quote: 'El menú interactivo y la rapidez para contestar multiplicó la captación de nuevos pacientes en todas nuestras sucursales.',
     author: 'Dr. Roberto Sandoval — Director Médico'
   }
@@ -714,7 +714,7 @@ export const COVERAGE_ZONES: CoverageZone[] = [
     area: 'Guadalajara Centro, Zapopan, Providencia, Puerta de Hierro, Tlaquepaque, Tonalá, El Salto, Tlajomulco',
     responseTime: '< 45 - 60 minutos',
     techniciansCount: 12,
-    highlightedProjects: ['Levantamiento Técnico en Sitio', 'Instalación en Sitio', 'Cuadrillas de Emergencia', 'Atención Inmediata'],
+    highlightedProjects: ['Levantamiento Técnico en Sitio', 'Instalación en Sitio'],
     isExpressZone: true
   },
   {
@@ -773,8 +773,7 @@ export const MAINTENANCE_PLANS: MaintenancePlan[] = [
       { name: 'Revisión de voltajes, baterías UPS y cableado', included: true },
       { name: 'Descuento del 15% en refacciones y equipo nuevo', included: true },
       { name: 'Tiempo de respuesta en sitio: 4 horas', included: true },
-      { name: 'Equipo de préstamo en caliente', included: false },
-      { name: 'Atención fines de semana y emergencias 24/7', included: false }
+      { name: 'Equipo de préstamo en caliente', included: false }
     ]
   },
   {
@@ -790,26 +789,8 @@ export const MAINTENANCE_PLANS: MaintenancePlan[] = [
       { name: 'Soporte remoto y telefónico prioritario (Lun-Vie 9:00 a 18:00)', included: true },
       { name: 'Equipo de préstamo en caliente (Hot Swap si falla el conmutador)', included: true },
       { name: 'Descuento del 25% en refacciones e insumos', included: true },
-      { name: 'Tiempo de respuesta en sitio: < 2 horas en emergencias', included: true },
-      { name: 'Capacitación bimestral a nuevos colaboradores', included: true },
-      { name: 'Atención a emergencias bajo guardia técnica', included: true }
-    ]
-  },
-  {
-    id: 'platino',
-    name: 'Póliza Platino 24/7 Misión Crítica',
-    badge: 'Misión Crítica',
-    description: 'Atención 24/7 los 365 días del año para plantas industriales, hospitales y centros de monitoreo que no pueden detenerse.',
-    recommendedFor: 'Industria manufacturera, centros hospitalarios y CEDIS 24h',
-    features: [
-      { name: 'Visitas preventivas quincenales y auditoría de red', included: true },
-      { name: 'Atención en sitio y remota 24/7/365 con línea roja directa', included: true },
-      { name: 'Ingeniero certificado asignado con respuesta express (<60 min)', included: true },
-      { name: 'Stock de refacciones y equipo idéntico en consignación local', included: true },
-      { name: 'Monitoreo proactivo de estado de enlace y temperaturas', included: true },
-      { name: 'Mantenimiento a planta de emergencia / sistemas UPS', included: true },
-      { name: 'Descuento del 35% en equipamiento y proyectos nuevos', included: true },
-      { name: 'SLA contractual con penalizaciones por incumplimiento', included: true }
+      { name: 'Tiempo de respuesta en sitio prioritario', included: true },
+      { name: 'Capacitación bimestral a nuevos colaboradores', included: true }
     ]
   }
 ];

@@ -543,7 +543,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCalculator, onSelectServic
                         <span>Llamar a Lic. Felipe Romo: {COMPANY_INFO.phoneMain}</span>
                       </a>
                       <a
-                        href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Hola%20Licenciado%20Felipe%20Romo,%20requiero%20atención%20inmediata.`}
+                        href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=Hola%20Licenciado%20Felipe%20Romo,%20me%20gustaría%20recibir%20información.`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full py-2 px-3 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2"

@@ -4,7 +4,6 @@ import {
   X, 
   PhoneCall, 
   Camera, 
-  AlertTriangle, 
   Calendar, 
   ChevronRight
 } from 'lucide-react';
@@ -29,18 +28,11 @@ export const FloatingWhatsApp: React.FC = () => {
       color: 'text-blue-600 dark:text-blue-400',
     },
     {
-      title: 'Agendar Visita en GDL (Gratis)',
+      title: 'Agendar Visita en GDL',
       desc: 'Levantamiento físico en tus instalaciones',
       text: 'Hola, me gustaría agendar un levantamiento técnico en Guadalajara.',
       icon: Calendar,
       color: 'text-emerald-600 dark:text-emerald-400',
-    },
-    {
-      title: 'Emergencia Técnica Inmediata',
-      desc: 'Falla crítica de conmutador o cámaras',
-      text: '🚨 REPORTE DE EMERGENCIA: Tengo una falla crítica y requiero asistencia técnica urgente.',
-      icon: AlertTriangle,
-      color: 'text-red-600 dark:text-red-400',
     },
   ];
 

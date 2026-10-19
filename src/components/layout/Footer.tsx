@@ -92,20 +92,6 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService, onOpenCalculato
               </div>
             </div>
 
-            {/* Emergency Hotline Box */}
-            <div className="p-3.5 rounded bg-slate-800 border border-slate-700 flex items-center gap-3">
-              <div className="p-2 rounded-md bg-red-500/20 text-red-400">
-                <Headphones className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-[11px] font-bold uppercase tracking-wider text-red-400">
-                  Línea de Emergencia 24/7
-                </div>
-                <a href={`tel:${COMPANY_INFO.phoneEmergency.replace(/\s/g, '')}`} className="text-sm font-bold text-white hover:text-red-300">
-                  {COMPANY_INFO.phoneEmergency}
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Col 2: Servicios Principales */}

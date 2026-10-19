@@ -148,9 +148,6 @@ export const ContactSection: React.FC = () => {
                         <span className="font-semibold text-slate-900 dark:text-white">Sábados y Domingos:</span>
                         <span className="font-semibold text-rose-600 dark:text-rose-400">Cerrado</span>
                       </div>
-                      <div className="pt-1.5 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
-                        * Pólizas empresariales con soporte técnico 24/7 disponible.
-                      </div>
                     </div>
                   </div>
                 </div>
